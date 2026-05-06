@@ -15,9 +15,9 @@ const Contact = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-4xl md:text-5xl font-bold  mb-6"
           >
-            Contact <span className="text-gold-gradient">Us</span>
+           <span className='text-white'> Contact </span><span className="text-gold-gradient">Us</span>
           </motion.h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             Have questions about global trade? Our team is here to help you navigate the international market.
@@ -125,7 +125,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <button type="button" className="btn-premium w-full py-4 flex items-center justify-center gap-2">
-                  <Send size={18} />
+                  <Send size={17}  className='inline  mx-3'/>
                   Send Message
                 </button>
               </form>

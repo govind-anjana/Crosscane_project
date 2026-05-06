@@ -35,7 +35,8 @@ const Products = () => {
       <Navbar />
       
       {/* Page Header */}
-      <section className="pt-40 pb-20 bg-navy-900 text-white relative overflow-hidden">
+      <section className="pt-32 md:pt-48 pb-16 md:pb-24 bg-navy-900 text-white relative overflow-hidden">
+
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gold-500 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
         </div>

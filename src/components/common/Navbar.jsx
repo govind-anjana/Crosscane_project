@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Calendar, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 // import { CartoonButton } from '../ui/cartoon-button';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.jpeg';
 
 const Navbar = () => {
@@ -38,13 +38,18 @@ submenu: [
   ];
 
   return (
-    <nav className="py-5 px-2 sticky top-0 z-50">
-      <div className="max-w-7xl border bg-white rounded-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="py-0  sticky top-0 z-50">
+      <div className="max-w-7xl bg-white  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-           <img src={logo} alt="Logo"  className="h-19 w-28" />
+          <div className="flex-shrink-0 flex items-center">
+            <Link to="/" ><img 
+              src={logo} 
+              alt="Logo"  
+              className="h-10 md:h-19 w-auto object-contain transition-all" 
+            /></Link>
           </div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -183,10 +188,7 @@ submenu: [
                     )}
                   </div>
                 ))}
-                <button className="btn-premium flex items-center justify-center gap-2 mt-4">
-                  <Calendar size={18} />
-                  Book Appointment
-                </button>
+                
               </div>
             </motion.div>
           )}

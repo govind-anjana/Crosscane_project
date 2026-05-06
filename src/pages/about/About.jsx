@@ -17,7 +17,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            About <span className="text-gold-gradient">Crosscane</span>
+            <span className='text-white'>About </span><span className="text-gold-gradient">Crosscane</span>
           </motion.h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             Leading the way in global trade with excellence, integrity, and innovative solutions for modern commerce.

@@ -24,7 +24,7 @@ const Banner = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            Global Trade Solutions with <span className="text-gold-gradient">Premium Excellence</span>
+             <span className='text-white'>Global Trade Solutions with </span><span className="text-gold-gradient">Premium Excellence</span>
           </motion.h1>
           
           <motion.p 

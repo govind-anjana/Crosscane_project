@@ -43,7 +43,7 @@ const Team = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-bold mb-6"
           >
-            Meet Our <span className="text-gold-gradient">Experts</span>
+            <span className='text-white'> Meet Our </span><span className="text-gold-gradient">Experts</span>
           </motion.h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
             A dedicated team of industry veterans committed to revolutionizing the way the world trades.
