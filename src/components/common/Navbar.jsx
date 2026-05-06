@@ -15,26 +15,21 @@ const Navbar = () => {
     { name: 'About', href: '/about' },
     { 
       name: 'Products', 
-      href: '/Products',
+      href: '/products',
       hasDropdown: true,
-submenu: [
-  { name: "Banana Powder", href: "/services/banana-powder" },
-  { name: "Chickpeas", href: "/services/chickpeas" },
-  { name: "Onions (onion powder)", href: "/services/onions-onion-powder" },
-  { name: "Banana fibers", href: "/services/banana-fibers" },
-  { name: "textiles", href: "/services/textiles" },
-  { name: "jegry powder", href: "/services/jegry-powder" },
-  { name: "wheat", href: "/services/wheat" },
-  { name: "salt", href: "/services/salt" },
-  // { name: "Wisdom Teeth Extraction", href: "/services/wisdom-teeth-extraction" },
-
-]
-
-
+      submenu: [
+        { name: "Banana Powder", href: "/services/banana-powder" },
+        { name: "Chickpeas", href: "/services/chickpeas" },
+        { name: "Onions (onion powder)", href: "/services/onions-onion-powder" },
+        { name: "Banana fibers", href: "/services/banana-fibers" },
+        { name: "textiles", href: "/services/textiles" },
+        { name: "jegry powder", href: "/services/jegry-powder" },
+        { name: "wheat", href: "/services/wheat" },
+        { name: "salt", href: "/services/salt" },
+      ]
     },
-    { name: 'Our Team', href: '/Our-Team' },
+    { name: 'Our Team', href: '/our-team' },
     { name: 'Contact', href: '/contact' },
-    // { name: 'Admin', href: '/admin' }
   ];
 
   return (
@@ -60,8 +55,8 @@ submenu: [
                 onMouseEnter={() => link.hasDropdown && setIsServicesOpen(true)}
                 onMouseLeave={() => link.hasDropdown && setIsServicesOpen(false)}
               >
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="text-navy-900 text-lg hover:text-gold-500 font-medium transition-colors flex items-center gap-1 cursor-pointer"
                 >
                   {link.name}
@@ -73,7 +68,7 @@ submenu: [
                       <ChevronDown size={18} />
                     </motion.div>
                   )}
-                </a>
+                </Link>
 
                 {/* Dropdown Menu */}
                 {link.hasDropdown && (
@@ -88,16 +83,19 @@ submenu: [
                       >
                         <div className="py-2">
                           {link.submenu.map((item, index) => (
-                            <motion.a
+                            <Link
                               key={item.name}
-                              href={item.href}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.05 }}
+                              to={item.href}
                               className="block px-5 py-2 text-navy-900 hover:bg-gold-300/20 hover:text-gold-500 transition-colors font-medium"
                             >
-                              {item.name}
-                            </motion.a>
+                              <motion.span
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                              >
+                                {item.name}
+                              </motion.span>
+                            </Link>
                           ))}
                         </div>
                       </motion.div>
@@ -164,27 +162,27 @@ submenu: [
                               className="overflow-hidden pl-4 space-y-1"
                             >
                               {link.submenu.map((item) => (
-                                <a
+                                <Link
                                   key={item.name}
-                                  href={item.href}
-                                   className="block text-navy-900/70 hover:text-gold-500 py-2 text-sm"
+                                  to={item.href}
+                                  className="block text-navy-900/70 hover:text-gold-500 py-2 text-sm"
                                   onClick={() => setIsMenuOpen(false)}
                                 >
                                   {item.name}
-                                </a>
+                                </Link>
                               ))}
                             </motion.div>
                           )}
                         </AnimatePresence>
                       </>
                     ) : (
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-navy-900 hover:text-gold-500 font-medium py-2 transition-colors block"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     )}
                   </div>
                 ))}

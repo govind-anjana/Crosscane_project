@@ -73,7 +73,7 @@ const FeaturedProducts = () => {
           </h2>
         </div>
         <Link
-          to="/Products"
+          to="/products"
           className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
         >
           View All

@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Globe, Share2, MessageCircle, ExternalLink } from 'lucide-react'
 import logo from '../../assets/logo.jpeg'
 
@@ -35,10 +36,10 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6 text-gold-500">Quick Links</h4>
             <ul className="space-y-4 text-gray-400">
-              <li><a href="/" className="hover:text-gold-500 transition-colors">Home</a></li>
-              <li><a href="/about" className="hover:text-gold-500 transition-colors">About Us</a></li>
-              <li><a href="/products" className="hover:text-gold-500 transition-colors">Our Products</a></li>
-              <li><a href="/contact" className="hover:text-gold-500 transition-colors">Contact</a></li>
+              <li><Link to="/" className="hover:text-gold-500 transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-gold-500 transition-colors">About Us</Link></li>
+              <li><Link to="/products" className="hover:text-gold-500 transition-colors">Our Products</Link></li>
+              <li><Link to="/contact" className="hover:text-gold-500 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -78,8 +79,8 @@ const Footer = () => {
             © {new Date().getFullYear()} Crosscane. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <a href="/privacy" className="hover:text-gray-300">Privacy Policy</a>
-            <a href="/terms" className="hover:text-gray-300">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-gray-300">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-gray-300">Terms of Service</Link>
           </div>
         </div>
       </div>
