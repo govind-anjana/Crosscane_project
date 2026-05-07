@@ -56,7 +56,7 @@ const products = [
   }
 ]
 
-const partners = ["GLOBAL TRADE", "EXIM CO", "TRADEHUB", "NAVY LOGISTICS", "GOLD COMMERCE", "CROSSCANE PARTNER"]
+// const partners = ["GLOBAL TRADE", "EXIM CO", "TRADEHUB", "NAVY LOGISTICS", "GOLD COMMERCE", "CROSSCANE PARTNER"]
 
 const FeaturedProducts = () => {
   return (
@@ -122,7 +122,7 @@ const FeaturedProducts = () => {
       </div>
 
       {/* Partners */}
-      <div className="container mx-auto px-6 mt-14">
+      {/* <div className="container mx-auto px-6 mt-14">
         <div className="border-t border-gray-100 pt-8 overflow-hidden">
           <div className="flex animate-marquee w-max opacity-30">
             {[...partners, ...partners].map((p, i) => (
@@ -132,7 +132,7 @@ const FeaturedProducts = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
     </section>
   )

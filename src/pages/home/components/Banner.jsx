@@ -12,7 +12,7 @@ const Banner = () => {
           alt="Premium Export Import Banner" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 to-royal-700/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/30 to-royal-700/60" />
       </div>
 
       {/* Content */}
@@ -22,7 +22,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
           >
              <span className='text-white'>Global Trade Solutions with </span><span className="text-gold-gradient">Premium Excellence</span>
           </motion.h1>
@@ -31,7 +31,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-200 mb-8 max-w-lg"
+            className="text-lg text-gray-200 mb-8 max-w-lg text-justify"
           >
             Empowering your business with seamless cross-border commerce and innovative logistics strategies. Experience the pinnacle of international trade.
           </motion.p>
@@ -45,7 +45,7 @@ const Banner = () => {
             <a href="/contact" className="btn-premium">
               Get Started
             </a>
-            <a href="/about" className="px-8 py-3 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all">
+            <a href="/about" className="px-8 py-3 border-2 border-gold-500 text-white font-semibold rounded-lg hover:bg-white/10 transition-all">
               Learn More
             </a>
           </motion.div>
