@@ -36,13 +36,13 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-semibold mb-6 text-navy-900">About Crosscane Overseas</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed text-justify">
                 At Crosscane Overseas, we are committed to delivering quality products from India to global markets with professionalism, reliability, and integrity. Founded with a vision to build strong international partnerships, we specialize in the export of agricultural products and their by-products, textiles, handicraft items, and a wide range of quality goods that represent the richness and craftsmanship of India.
               </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed text-justify">
                 We believe in transparent business practices, consistent quality standards, and timely delivery to ensure complete customer satisfaction. With a strong understanding of global trade and logistics, our team works dedicatedly to provide dependable export solutions tailored to international market requirements.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed font-semibold italic text-navy-900/80">
+              <p className="text-gray-600 mb-8 leading-relaxed font-semibold italic text-navy-900/80 text-justify">
                 Driven by trust, excellence, and long-term relationships, Crosscane Overseas aims to become a trusted global partner for businesses seeking quality products and reliable service from India.
               </p>
 

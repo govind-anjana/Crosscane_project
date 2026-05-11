@@ -109,16 +109,16 @@ const CountDown = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group h-full"
+            //   className="relative group h-full"
             >
-              <div className="h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-10 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-3xl hover:-translate-y-2">
+              <div className="h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-3xl hover:-translate-y-2">
                 {/* Icon Container */}
                 <div className="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-gold-500/20 group-hover:border-gold-500/40 transition-all duration-500 group-hover:rotate-6">
                   {stat.icon}
                 </div>
                 
                 {/* Number */}
-                <div className="text-5xl md:text-6xl font-black text-white mb-3 tracking-tighter">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tighter">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
                 
@@ -128,7 +128,7 @@ const CountDown = () => {
                 </h3>
                 
                 {/* Description */}
-                <p className="text-emerald-50/60 text-sm leading-relaxed">
+                <p className="text-white text-sm leading-relaxed">
                   {stat.description}
                 </p>
               </div>
