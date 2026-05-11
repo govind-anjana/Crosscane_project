@@ -29,7 +29,7 @@ const Navbar = () => {
         { name: "salt", href: "/services/salt" },
       ]
     },
-    { name: 'Our Team', href: '/our-team' },
+    // { name: 'Our Team', href: '/our-team' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -236,4 +236,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;

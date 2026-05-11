@@ -4,22 +4,9 @@ import Footer from '../../components/common/Footer'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Filter, ArrowRight, ShoppingCart, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import bananaImg from '../../assets/banana_premium.png'
-import textileImg from '../../assets/textile_premium.png'
-import chickpeaImg from '../../assets/chickpea_premium.png'
+import { PRODUCTS } from '../../constants/products'
 
-const allProducts = [
-  { id: 1, name: "Banana Powder", slug: "banana-powder", category: "Agro", image: bananaImg, price: "Inquire for Price", description: "Premium quality processed from fresh Indian bananas." },
-  { id: 2, name: "Chickpeas", slug: "chickpeas", category: "Grains", image: chickpeaImg, price: "Inquire for Price", description: "High-nutrient organic chickpeas for global markets." },
-  { id: 3, name: "Onion Powder", slug: "onion-powder", category: "Spices", image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Concentrated and pure onion powder for industrial use." },
-  { id: 9, name: "Premium Indian Spices", slug: "spices", category: "Spices", image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Authentic whole and ground spices including Cardamom, Cumin, and Turmeric." },
-  { id: 4, name: "Banana Fibers", slug: "banana-fibers", category: "Textiles", image: "https://images.unsplash.com/photo-1528476513222-19bc30a7861c?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Eco-friendly natural fibers for sustainable manufacturing." },
-  { id: 5, name: "Industrial Textiles", slug: "textiles", category: "Textiles", image: textileImg, price: "Inquire for Price", description: "Durable textiles for various industrial applications." },
-  { id: 6, name: "Jegry Powder", slug: "jegry-powder", category: "Commodities", image: "https://images.unsplash.com/photo-1610970882739-4919597ed079?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Traditional natural sweetener processed with modern standards." },
-  { id: 7, name: "Golden Wheat", slug: "wheat", category: "Grains", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Export-grade wheat harvested at peak quality." },
-  { id: 8, name: "Pure Sea Salt", slug: "salt", category: "Commodities", image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Refined sea salt for international culinary requirements." },
-]
-
+const allProducts = PRODUCTS
 const categories = ["All", "Agro", "Grains", "Spices", "Textiles", "Commodities"]
 
 const Products = () => {
