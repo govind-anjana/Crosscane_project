@@ -27,7 +27,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="max-w-7xl mx-auto py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Why Choose <span className="text-gold-gradient">Crosscane</span></h2>

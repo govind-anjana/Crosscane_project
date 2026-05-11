@@ -6,7 +6,7 @@ import logo from '../../assets/logo.jpeg'
 
 const Footer = () => {
   return (
-    <footer className="bg-navy-900 text-white pt-20 pb-10">
+    <footer className="max-w-7xl mx-auto bg-navy-900 text-white pt-20 pb-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}

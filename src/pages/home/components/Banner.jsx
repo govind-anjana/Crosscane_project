@@ -4,7 +4,7 @@ import banner from '../../../assets/Export-Import.jpg'
 
 const Banner = () => {
   return (
-    <section className="relative h-[80vh] overflow-hidden flex items-center">
+    <section className="max-w-7xl mx-auto relative h-[80vh] overflow-hidden flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 

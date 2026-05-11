@@ -60,7 +60,7 @@ const products = [
 
 const FeaturedProducts = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="max-w-7xl mx-auto py-20 bg-white overflow-hidden">
 
       {/* Header */}
       <div className="container mx-auto px-6 mb-12 flex items-end justify-between">
