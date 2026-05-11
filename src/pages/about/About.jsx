@@ -113,11 +113,11 @@ const About = () => {
       {/* Indian Craftsmanship Section */}
       <section className="py-20 bg-bg-primary">
         <div className="container mx-auto px-6">
-          <div className="bg-navy-900 rounded-[3rem] overflow-hidden relative">
+          <div className="bg-navy-900 rounded-3xl overflow-hidden relative">
             <div className="absolute top-0 right-0 p-20 opacity-10">
               <Award size={200} className="text-gold-500" />
             </div>
-            <div className="p-12 md:p-20 relative z-10">
+            <div className="p-12 md:p-15 relative z-10">
               <div className="max-w-3xl">
                 <span className="text-gold-500 font-semibold tracking-widest text-xs uppercase mb-4 block">The Indian Legacy</span>
                 <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 leading-tight">
