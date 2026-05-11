@@ -2,20 +2,22 @@ import React, { useState } from 'react'
 import Navbar from '../../components/common/Navbar'
 import Footer from '../../components/common/Footer'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Filter, ArrowRight, ShoppingCart } from 'lucide-react'
+import { Search, Filter, ArrowRight, ShoppingCart, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import bananaImg from '../../assets/banana_premium.png'
 import textileImg from '../../assets/textile_premium.png'
 import chickpeaImg from '../../assets/chickpea_premium.png'
 
 const allProducts = [
-  { id: 1, name: "Banana Powder", category: "Agro", image: bananaImg, price: "Inquire for Price", description: "Premium quality processed from fresh Indian bananas." },
-  { id: 2, name: "Chickpeas", category: "Grains", image: chickpeaImg, price: "Inquire for Price", description: "High-nutrient organic chickpeas for global markets." },
-  { id: 3, name: "Onion Powder", category: "Spices", image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Concentrated and pure onion powder for industrial use." },
-  { id: 4, name: "Banana Fibers", category: "Textiles", image: "https://images.unsplash.com/photo-1528476513222-19bc30a7861c?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Eco-friendly natural fibers for sustainable manufacturing." },
-  { id: 5, name: "Industrial Textiles", category: "Textiles", image: textileImg, price: "Inquire for Price", description: "Durable textiles for various industrial applications." },
-  { id: 6, name: "Jegry Powder", category: "Commodities", image: "https://images.unsplash.com/photo-1610970882739-4919597ed079?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Traditional natural sweetener processed with modern standards." },
-  { id: 7, name: "Golden Wheat", category: "Grains", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Export-grade wheat harvested at peak quality." },
-  { id: 8, name: "Pure Sea Salt", category: "Commodities", image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Refined sea salt for international culinary requirements." },
+  { id: 1, name: "Banana Powder", slug: "banana-powder", category: "Agro", image: bananaImg, price: "Inquire for Price", description: "Premium quality processed from fresh Indian bananas." },
+  { id: 2, name: "Chickpeas", slug: "chickpeas", category: "Grains", image: chickpeaImg, price: "Inquire for Price", description: "High-nutrient organic chickpeas for global markets." },
+  { id: 3, name: "Onion Powder", slug: "onion-powder", category: "Spices", image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Concentrated and pure onion powder for industrial use." },
+  { id: 9, name: "Premium Indian Spices", slug: "spices", category: "Spices", image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Authentic whole and ground spices including Cardamom, Cumin, and Turmeric." },
+  { id: 4, name: "Banana Fibers", slug: "banana-fibers", category: "Textiles", image: "https://images.unsplash.com/photo-1528476513222-19bc30a7861c?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Eco-friendly natural fibers for sustainable manufacturing." },
+  { id: 5, name: "Industrial Textiles", slug: "textiles", category: "Textiles", image: textileImg, price: "Inquire for Price", description: "Durable textiles for various industrial applications." },
+  { id: 6, name: "Jegry Powder", slug: "jegry-powder", category: "Commodities", image: "https://images.unsplash.com/photo-1610970882739-4919597ed079?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Traditional natural sweetener processed with modern standards." },
+  { id: 7, name: "Golden Wheat", slug: "wheat", category: "Grains", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Export-grade wheat harvested at peak quality." },
+  { id: 8, name: "Pure Sea Salt", slug: "salt", category: "Commodities", image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&q=80&w=600&h=400", price: "Inquire for Price", description: "Refined sea salt for international culinary requirements." },
 ]
 
 const categories = ["All", "Agro", "Grains", "Spices", "Textiles", "Commodities"]
@@ -111,7 +113,9 @@ const Products = () => {
                   className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-500 group"
                 >
                   <div className="relative h-64 overflow-hidden bg-gray-50">
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Link to={`/services/${product.slug}`}>
+                      <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    </Link>
                     <div className="absolute top-4 right-4">
                       <span className="bg-white/90 backdrop-blur-sm text-navy-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-gray-100">
                         {product.category}
@@ -119,13 +123,15 @@ const Products = () => {
                     </div>
                   </div>
                   <div className="p-8">
-                    <h3 className="text-xl font-semibold text-navy-900 mb-2 group-hover:text-gold-500 transition-colors">{product.name}</h3>
+                    <Link to={`/services/${product.slug}`}>
+                      <h3 className="text-xl font-semibold text-navy-900 mb-2 group-hover:text-gold-500 transition-colors">{product.name}</h3>
+                    </Link>
                     <p className="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-2">{product.description}</p>
                     <div className="flex items-center justify-between pt-6 border-t border-gray-50">
                       <span className="text-navy-900 font-bold text-sm uppercase tracking-widest">{product.price}</span>
-                      <button className="w-10 h-10 bg-bg-primary text-navy-900 rounded-xl flex items-center justify-center hover:bg-gold-500 hover:text-white transition-all">
-                        <ShoppingCart size={18} />
-                      </button>
+                      <Link to={`/services/${product.slug}`} className="w-10 h-10 bg-bg-primary text-navy-900 rounded-xl flex items-center justify-center hover:bg-gold-500 hover:text-white transition-all">
+                        <ExternalLink size={18} />
+                      </Link>
                     </div>
                   </div>
                 </motion.div>

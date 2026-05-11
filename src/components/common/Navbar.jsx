@@ -20,7 +20,8 @@ const Navbar = () => {
       submenu: [
         { name: "Banana Powder", href: "/services/banana-powder" },
         { name: "Chickpeas", href: "/services/chickpeas" },
-        { name: "Onions (onion powder)", href: "/services/onions-onion-powder" },
+        { name: "Premium Spices", href: "/services/spices" },
+        { name: "Onions (onion powder)", href: "/services/onion-powder" },
         { name: "Banana fibers", href: "/services/banana-fibers" },
         { name: "textiles", href: "/services/textiles" },
         { name: "jegry powder", href: "/services/jegry-powder" },

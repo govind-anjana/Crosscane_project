@@ -9,6 +9,7 @@ const products = [
   {
     id: 1,
     name: "Premium Bananas",
+    slug: "banana-powder",
     category: "Fruits",
     price: "Inquire for Price",
     image: bananaImg,
@@ -17,6 +18,7 @@ const products = [
   {
     id: 2,
     name: "Organic Chickpeas",
+    slug: "chickpeas",
     category: "Grains & Pulses",
     price: "Inquire for Price",
     image: chickpeaImg,
@@ -25,6 +27,7 @@ const products = [
   {
     id: 3,
     name: "Onion Powder",
+    slug: "onion-powder",
     category: "Spices",
     price: "Inquire for Price",
     image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&q=80&w=600&h=400",
@@ -33,6 +36,7 @@ const products = [
   {
     id: 4,
     name: "Industrial Textiles",
+    slug: "textiles",
     category: "Materials",
     price: "Inquire for Price",
     image: textileImg,
@@ -41,6 +45,7 @@ const products = [
   {
     id: 5,
     name: "Golden Wheat",
+    slug: "wheat",
     category: "Grains",
     price: "Inquire for Price",
     image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=600&h=400",
@@ -49,6 +54,7 @@ const products = [
   {
     id: 6,
     name: "Pure Sea Salt",
+    slug: "salt",
     category: "Commodities",
     price: "Inquire for Price",
     image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&q=80&w=600&h=400",
@@ -87,15 +93,17 @@ const FeaturedProducts = () => {
           {[...products, ...products].map((product, index) => (
             <div
               key={`${product.id}-${index}`}
-              className="w-72 flex-shrink-0 rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="w-72 flex-shrink-0 rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden bg-gray-50">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
+                <Link to={`/services/${product.slug}`}>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </Link>
                 <span className="absolute top-3 left-3 bg-white text-gray-600 text-[10px] font-medium tracking-wider uppercase px-3 py-1 rounded-full border border-gray-100">
                   {product.category}
                 </span>
@@ -103,17 +111,19 @@ const FeaturedProducts = () => {
 
               {/* Body */}
               <div className="p-5">
-                <h3 className="text-base font-semibold text-gray-900 mb-1">
-                  {product.name}
-                </h3>
+                <Link to={`/services/${product.slug}`}>
+                  <h3 className="text-base font-semibold text-gray-900 mb-1 hover:text-amber-600 transition-colors">
+                    {product.name}
+                  </h3>
+                </Link>
                 <p className="text-xs text-gray-400 leading-relaxed mb-4 line-clamp-2">
                   {product.description}
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">{product.price}</span>
-                  <button className="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center hover:bg-amber-600 transition-colors">
-                    <ShoppingCart size={14} />
-                  </button>
+                  <Link to={`/services/${product.slug}`} className="w-8 h-8 rounded-lg bg-gray-900 text-white flex items-center justify-center hover:bg-amber-600 transition-colors">
+                    <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             </div>
