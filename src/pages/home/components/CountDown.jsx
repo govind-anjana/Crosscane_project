@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useSpring, useTransform } from 'framer-motion';
-import { Users, ShieldCheck, Award, Leaf, Globe } from 'lucide-react';
+import { Users, ShieldCheck, Award, Globe } from 'lucide-react';
 
 const Counter = ({ value, suffix = "" }) => {
   const ref = useRef(null);
@@ -57,45 +57,43 @@ const CountDown = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto relative py-24 overflow-hidden">
-      {/* Background with Premium Emerald Gradient */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#064e3b] via-[#065f46] to-[#022c22] opacity-98"></div>
-        <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay scale-110"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")' }}
-        ></div>
+    <section className="relative py-14 overflow-hidden bg-navy-900">
+      {/* Background with Premium Navy/Gold CSS Patterns */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Main Gradient Base */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#0A3D91_0%,_#001F5B_100%)]"></div>
         
-        {/* Decorative Light Orbs */}
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        {/* Subtle Grid Overlay */}
+        <div className="absolute inset-0 opacity-[0.05]" 
+             style={{ backgroundImage: 'linear-gradient(#C89B2B 1px, transparent 1px), linear-gradient(90deg, #C89B2B 1px, transparent 1px)', backgroundSize: '60px 60px' }}>
+        </div>
+
+        {/* Decorative Golden Light Ray */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[conic-gradient(from_225deg_at_50%_50%,_transparent_0%,_#C89B2B_10%,_transparent_20%)] opacity-[0.03] animate-pulse"></div>
+        
+        {/* Abstract Floating Orbs */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-gold-500/10 rounded-full blur-[100px]"></div>
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-royal-700/20 rounded-full blur-[100px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <motion.span 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-gold-500 font-bold tracking-widest text-sm uppercase mb-4 block"
-          >
-            Our Global Impact
-          </motion.span>
+        <div className="text-center mb-10">
+         
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
           >
-            Sustainability & <span className="text-gold-500">Ethics</span>
+           <span className='text-white'>Sustainability &</span>   <span className="text-gold-500">Ethics</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-emerald-50/80 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
+            className="text-white/70 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
           >
             We are committed to ethical sourcing, environmental responsibility, and empowering farming communities across the globe.
           </motion.p>
@@ -111,24 +109,24 @@ const CountDown = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             //   className="relative group h-full"
             >
-              <div className="h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-3xl hover:-translate-y-2">
+              <div className="h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-10 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-navy-900/40">
                 {/* Icon Container */}
                 <div className="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-gold-500/20 group-hover:border-gold-500/40 transition-all duration-500 group-hover:rotate-6">
                   {stat.icon}
                 </div>
                 
                 {/* Number */}
-                <div className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tighter">
+                <div className="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tighter">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
                 
                 {/* Label */}
                 <h3 className="text-gold-500 font-bold text-xl mb-4">
-                  {stat.label}
+                 <span className='text-gold-500'> {stat.label}</span>
                 </h3>
                 
                 {/* Description */}
-                <p className="text-white text-sm leading-relaxed">
+                <p className="text-white/60 text-sm leading-relaxed">
                   {stat.description}
                 </p>
               </div>
