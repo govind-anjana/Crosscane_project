@@ -62,14 +62,14 @@ const ProductDetail = () => {
       </div>
 
       <main className="container mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-15">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-0 mb-16">
           
           {/* Left: Image Gallery */}
           <div className="space-y-4">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="aspect-square rounded-3xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 p-2"
+              className="w-full md:w-[400px] h-[350px] md:h-[330px] rounded-3xl overflow-hidden  mx-auto shadow-sm bg-gray-50 "
             >
               <img 
                 src={gallery[activeImg]} 
@@ -78,29 +78,14 @@ const ProductDetail = () => {
               />
             </motion.div>
             
-            {/* <div className="relative group border">
-              <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-                {gallery.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImg(idx)}
-                    className={`flex-shrink-0 w-24 h-24 rounded-2xl overflow-hidden border-2 transition-all ${
-                      activeImg === idx ? 'border-gold-500 ring-4 ring-gold-500/10' : 'border-transparent hover:border-gray-200'
-                    }`}
-                  >
-                    <img src={img} className="w-full h-full object-cover" alt={`Gallery ${idx}`} />
-                  </button>
-                ))}
-              </div>
-            </div> */}
           </div>
 
           {/* Right: Info */}
           <div className="flex flex-col">
-            <span className="inline-block px-4 py-1 bg-gold-500/10 text-gold-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-3 self-start">
+            <span className="inline-block px-4 py-1 bg-gold-500/10 text-gold-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 self-start">
               Premium Export Quality
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold text-navy-900 mb-3 tracking-tight">{product.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-navy-900 mb-4 tracking-tighter uppercase">{product.title}</h2>
             <p className="text-gold-500 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-widest">
              • Fresh  • Natural  • Global Standard
             </p>
@@ -109,7 +94,7 @@ const ProductDetail = () => {
               At Crosscane Overseas, we supply premium-quality {product.title} sourced from trusted agricultural hubs and processed under strict global quality standards.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-8 border-t border-gray-100 pt-8">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-8 border-t border-gray-100 pt-8">
               {[
                 { icon: <Leaf size={18} className="text-gold-500" />, label: "Variety", value: product.title.split(' ')[0] },
                 { icon: <Package size={18} className="text-gold-500" />, label: "Category", value: product.category },
@@ -117,60 +102,33 @@ const ProductDetail = () => {
                 { icon: <Globe size={18} className="text-gold-500" />, label: "Origin", value: "India" },
                 { icon: <Clock size={18} className="text-gold-500" />, label: "Shelf Life", value: "Long" },
                 { icon: <Zap size={18} className="text-gold-500" />, label: "Storage", value: "Standard" },
-                { icon: <Scale size={18} className="text-gold-500" />, label: "Supply Ability", value: "Bulk / Container Load" },
-                { icon: <Award size={18} className="text-gold-500" />, label: "Certification", value: "Global Standards Certified" },
+                 
               ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 group py-1">
                     <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-gold-500/10 transition-all duration-300">
                       {item.icon}
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                      <span className="font-bold text-gray-400 uppercase text-[10px] tracking-widest whitespace-nowrap">{item.label} :</span>
+                      <span className="font-bold text-gray-400 min-w-[140px] uppercase text-[10px] tracking-widest whitespace-nowrap">{item.label} :</span>
                       <span className="text-navy-900 font-black text-sm tracking-tight">{item.value}</span>
                     </div>
                   </div>
               ))}
-            </div>
+            </div> */}
 
-            <div className="flex flex-wrap gap-4 mt-auto pt-1 border-t border-gray-50">
-              <button className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[14px] uppercase   flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
+            <div className="flex flex-wrap gap-4 pt-1 border-t border-gray-50">
+              <Link to="/contact" className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
                 <Mail size={18} /> Request A Quote
-              </button>
-              <button className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[14px]   flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all">
+              </Link>
+              <Link to="/contact" className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all">
                 <FileText size={18} /> Download Datasheet
-              </button>
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Section: Product Features */}
-        <div className="mb-15">
-          <div className="text-center mb-16">
-            <span className="text-gold-500 font-bold text-[13px] uppercase tracking-[0.4em] mb-4 inline-block">Capabilities </span>&nbsp;
-            <h2 className="text-3xl font-bold text-navy-900 uppercase tracking-tight relative inline-block">
-              Product Features
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-gold-500 rounded-full"></div>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-            {[
-              { icon: <Award size={24} className="text-gold-500" />, text: "Premium Export Quality" },
-              { icon: <Leaf size={24} className="text-gold-500" />, text: "Naturally Fresh & Pure" },
-              { icon: <Zap size={24} className="text-gold-500" />, text: "Uniform Size & Shape" },
-              { icon: <BadgeCheck size={24} className="text-gold-500" />, text: "Hygienically Processed" },
-              { icon: <Star size={24} className="text-gold-500" />, text: "Rich in Nutrients" },
-              { icon: <Clock size={24} className="text-gold-500" />, text: "Long Shelf Life" },
-              { icon: <Package size={24} className="text-gold-500" />, text: "Suitable for Bulk Export" },
-            ].map((f, i) => (
-              <div key={i} className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-16 h-16 rounded-full border border-gray-100 bg-white flex items-center justify-center mb-4 group-hover:bg-gold-500/10 transition-all duration-300 shadow-sm">
-                  {f.icon}
-                </div>
-                <p className="text-[10px] font-black text-navy-900 leading-tight px-2 uppercase tracking-widest">{f.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+       
+       
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 ">
           {/* Section: Description */}
@@ -226,6 +184,39 @@ const ProductDetail = () => {
           </div>
         </div>
 
+          <div className="mb-24 bg-navy-900 rounded-3xl p-10 md:p-16  relative overflow-hidden shadow-2xl border border-white/10 group">
+          {/* Decorative element */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/10 -translate-y-1/2 translate-x-1/2 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold-500/5 translate-y-1/2 -translate-x-1/2 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="text-center mb-16 relative z-10">
+            <span className="text-gold-500 font-black text-[13px] uppercase mb-4 inline-block">Global Export Standards</span>
+            <h2 className="text-2xl lg:text-4xl font-bold text-white uppercase tracking-tighter block">
+            <span className='text-white'>Product Capabilities</span>
+            </h2>
+            <div className="w-16 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-9 relative z-10">
+            {[
+              { icon: <Award size={28} />, text: "Premium Export Quality" },
+              { icon: <Leaf size={28} />, text: "Naturally Fresh & Pure" },
+              { icon: <Zap size={28} />, text: "Uniform Size & Shape" },
+              { icon: <BadgeCheck size={28} />, text: "Hygienically Processed" },
+              { icon: <Star size={28} />, text: "Rich in Nutrients" },
+              { icon: <Clock size={28} />, text: "Long Shelf Life" },
+              { icon: <Package size={28} />, text: "Bulk Export Supply" },
+            ].map((f, i) => (
+              <div key={i} className="flex flex-col items-center text-center group/item cursor-default">
+                <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover/item:bg-gold-500 group-hover/item:border-gold-500 group-hover/item:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl text-gold-500 group-hover/item:text-navy-900">
+                  {f.icon}
+                </div>
+                <p className="text-[13px] font-bold text-white/80   uppercase  group-hover/item:text-gold-500 transition-colors duration-300">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Section: Specifications */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  mb-20">
           <div className="bg-white border border-gray-100 rounded-3xl p-7 md:px-14">
@@ -278,12 +269,12 @@ const ProductDetail = () => {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 z-10 w-full lg:w-auto">
-            <button className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
+            <Link to="/contact" className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
               Get A Quote <ChevronRight size={18} />
-            </button>
-            <button className="flex-1 lg:flex-none bg-white/5 border-2 border-white/10 text-white px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white hover:text-navy-900 transition-all active:scale-95 flex items-center justify-center gap-3 backdrop-blur-sm">
+            </Link>
+            <Link to="/contact" className="flex-1 lg:flex-none bg-white/5 border-2 border-white/10 text-white px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white hover:text-navy-900 transition-all active:scale-95 flex items-center justify-center gap-3 backdrop-blur-sm">
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </main>

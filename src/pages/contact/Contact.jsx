@@ -74,7 +74,7 @@ const Contact = () => {
 
               {/* Social or extra info */}
               <div className="mt-12 p-8 bg-navy-900 rounded-3xl text-white">
-                <h4 className="font-bold mb-2">Business Hours</h4>
+                <h4 className="font-bold mb-2"><span className='text-white'>Business Hours</span></h4>
                 <p className="text-gray-400 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p className="text-gray-400 text-sm">Saturday - Sunday: Closed</p>
               </div>
