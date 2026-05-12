@@ -1,326 +1,311 @@
-import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import Navbar from '../../components/common/Navbar'
 import Footer from '../../components/common/Footer'
 import { motion } from 'framer-motion'
-import { CheckCircle2, ArrowLeft, Download, ShieldCheck, Package, Globe, BarChart3, Info, Star } from 'lucide-react'
+import { 
+  ChevronRight, 
+  Home, 
+  FileText, 
+  Mail, 
+  Check, 
+  ChevronLeft, 
+  Leaf, 
+  ShieldCheck, 
+  Globe, 
+  Users, 
+  Clock, 
+  Package, 
+  BadgeCheck,
+  Scale,
+  Award,
+  Zap
+} from 'lucide-react'
 import { PRODUCTS } from '../../constants/products'
 
 const ProductDetail = () => {
   const { slug } = useParams()
   const navigate = useNavigate()
+  const [activeImg, setActiveImg] = useState(0)
   
-  // Find product from centralized constants
   const product = PRODUCTS.find(p => p.slug === slug) || PRODUCTS[0]
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    setActiveImg(0)
+  }, [slug])
+
+  // Mock gallery images since data has only one
+  const gallery = [product.image, product.image, product.image, product.image, product.image]
+
   return (
-    <div className="min-h-screen bg-[#FDFDFD]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Product Hero - Redesigned for impact */}
-      <section className="pt-32 pb-32 bg-white relative overflow-hidden">
-        {/* Abstract background elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-navy-900/5 -skew-x-12 translate-x-32" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-navy-900/40 hover:text-gold-500 transition-all mb-12 group"
-          >
-            <ArrowLeft size={18} className="group-hover:-translate-x-2 transition-transform" />
-            <span className="font-black uppercase tracking-[0.3em] text-[10px]">Back to Collection</span>
-          </button>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            {/* Left Content - Takes 5 columns */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-5 pt-10"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="fill-gold-500 text-gold-500" />
-                  ))}
-                </div>
-                <span className="text-navy-900/30 text-xs font-bold uppercase tracking-widest">Premium Export Grade</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-black text-navy-900 mb-10 leading-[1.05] tracking-tight">
-                {product.title}
-              </h1>
-              
-              <p className="text-2xl text-navy-900/50 font-medium mb-12 leading-relaxed border-l-4 border-gold-500 pl-8">
-                {product.tagline}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <button className="bg-navy-900 text-white px-12 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-gold-500 hover:text-navy-900 transition-all duration-500 shadow-2xl shadow-navy-900/20 active:scale-95 flex items-center justify-center gap-3">
-                  Inquire for Order
-                  <ArrowLeft className="rotate-180" size={18} />
-                </button>
-                <button className="px-10 py-5 border-2 border-navy-900/10 rounded-2xl text-navy-900 font-black text-sm uppercase tracking-widest hover:border-navy-900 transition-all flex items-center justify-center gap-3 active:scale-95">
-                  <Download size={18} />
-                  Catalog
-                </button>
-              </div>
-            </motion.div>
-
-            {/* Right Image - Takes 7 columns for massive impact */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "circOut" }}
-              className="lg:col-span-7 relative group"
-            >
-              <div className="relative aspect-[16/10] lg:aspect-[1.4] rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] bg-gray-100 border-[16px] border-white group-hover:shadow-[0_80px_120px_-30px_rgba(0,0,0,0.3)] transition-all duration-700">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/20 to-transparent" />
-              </div>
-              
-              {/* Floating Certification Badge */}
-              <motion.div 
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="absolute -bottom-10 right-10 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-gray-50 flex items-center gap-6"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-gold-500 flex items-center justify-center shadow-lg shadow-gold-500/30">
-                  <ShieldCheck size={32} className="text-navy-900" />
-                </div>
-                <div>
-                  <p className="text-navy-900/40 text-[10px] font-black uppercase tracking-[0.2em] mb-1">Authenticity</p>
-                  <p className="text-xl font-black text-navy-900 tracking-tight">100% Certified</p>
-                </div>
-              </motion.div>
-
-              {/* Floating Quality Badge */}
-              <motion.div 
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                className="absolute top-20 -right-8 bg-navy-900 p-6 rounded-3xl shadow-2xl text-white hidden xl:block"
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <Star className="text-gold-500" size={24} fill="currentColor" />
-                  <p className="font-black text-xs uppercase tracking-widest text-gold-500">Global</p>
-                  <p className="font-black text-xs uppercase tracking-widest">Standard</p>
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Details Content */}
-      <section className="py-32 bg-[#FDFDFD]">
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 py-4 mt-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
-            {/* Main Content Area - 8 columns */}
-            <div className="lg:col-span-8 space-y-32">
-              
-              {/* Overview Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="flex items-center gap-6 mb-12">
-                  <span className="w-20 h-px bg-gold-500/30"></span>
-                  <h2 className="text-4xl font-black text-navy-900 tracking-tight uppercase">Detailed Overview</h2>
-                </div>
-                <div className="space-y-10">
-                  {product.description.map((p, i) => (
-                    <p key={i} className="text-navy-900/60 leading-[1.8] text-2xl font-medium tracking-tight">
-                      {p}
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
+          <nav className="flex items-center gap-2 text-sm text-gray-500 font-medium">
+            <Link to="/" className="flex items-center gap-1 hover:text-green-600 transition-colors">
+              <Home size={14} /> Home
+            </Link>
+            <ChevronRight size={14} />
+            <Link to="/products" className="hover:text-green-600 transition-colors">Products</Link>
+            <ChevronRight size={14} />
+            <span className="text-gray-400 capitalize">{product.category}</span>
+            <ChevronRight size={14} />
+            <span className="text-green-700 font-bold">{product.title}</span>
+          </nav>
+        </div>
+      </div>
 
-              {/* Quality & Assurance Highlight */}
-              {product.qualityAssurance && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="bg-navy-900 rounded-[4rem] p-20 text-white relative overflow-hidden shadow-3xl"
-                >
-                  <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500/10 rounded-full blur-[150px] -mr-48 -mt-48" />
-                  <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-[150px] -ml-48 -mb-48" />
-                  
-                  <div className="relative z-10">
-                    <div className="inline-flex items-center gap-4 bg-gold-500 text-navy-900 px-6 py-2 rounded-full font-black text-xs uppercase tracking-[0.2em] mb-12">
-                      <ShieldCheck size={16} />
-                      Quality Guaranteed
-                    </div>
-                    <h2 className="text-5xl font-black mb-10 leading-tight tracking-tight">
-                      {product.qualityAssurance.title}
-                    </h2>
-                    <p className="text-white/60 text-2xl mb-16 leading-relaxed max-w-2xl font-medium">
-                      {product.qualityAssurance.content}
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                      {product.qualityAssurance.points.map((point, i) => (
-                        <div key={i} className="flex items-center gap-6 group">
-                          <div className="w-4 h-4 rounded-full border-2 border-gold-500 group-hover:bg-gold-500 transition-all duration-300"></div>
-                          <span className="text-xl font-bold text-white/90 tracking-tight">{point}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Grid of Key Features */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center gap-6 mb-16">
-                  <span className="w-20 h-px bg-gold-500/30"></span>
-                  <h2 className="text-4xl font-black text-navy-900 tracking-tight uppercase">Key Attributes</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {product.features.map((feature, i) => (
-                    <div key={i} className="group flex items-start gap-8 p-10 bg-white rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-2xl hover:border-gold-500/30 hover:-translate-y-2 transition-all duration-500">
-                      <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-500 transition-colors duration-500">
-                        <CheckCircle2 className="text-navy-900/20 group-hover:text-navy-900 transition-colors" size={28} />
-                      </div>
-                      <p className="text-2xl font-black text-navy-900 pt-2 tracking-tight leading-tight">{feature}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Packaging & Logistics Section */}
-              {(product.packagingOptions || product.exportCapability) && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-                  {product.packagingOptions && (
-                    <motion.div
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      className="space-y-12"
-                    >
-                      <div className="flex items-center gap-4 text-gold-600 font-black uppercase tracking-[0.3em] text-xs">
-                        <Package size={20} />
-                        Packaging Solutions
-                      </div>
-                      <div className="space-y-6">
-                        {product.packagingOptions.map((opt, i) => (
-                          <div key={i} className="flex items-center gap-6 p-8 bg-gray-50 rounded-[2.5rem] font-black text-xl text-navy-900 border border-transparent hover:border-gold-500/20 transition-all cursor-default">
-                            <span className="text-gold-500">0{i+1}.</span>
-                            {opt}
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                  {product.exportCapability && (
-                    <motion.div
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      className="space-y-12"
-                    >
-                      <div className="flex items-center gap-4 text-gold-600 font-black uppercase tracking-[0.3em] text-xs">
-                        <Globe size={20} />
-                        Export Logistics
-                      </div>
-                      <div className="p-12 bg-white rounded-[3rem] border-2 border-gray-50 shadow-inner">
-                        <p className="text-navy-900/60 leading-[1.6] font-bold text-2xl tracking-tight italic">
-                          "{product.exportCapability}"
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
-              )}
-            </div>
-
-            {/* Sticky Sidebar - 4 columns */}
-            <div className="lg:col-span-4 space-y-12 lg:sticky lg:top-32 h-fit pt-10">
-              
-              {/* Specs Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-white rounded-[3.5rem] p-12 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-gray-50 relative overflow-hidden group"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-                <h3 className="text-xs font-black mb-12 text-navy-900/20 uppercase tracking-[0.5em]">Specifications</h3>
-                <div className="space-y-10">
-                  {product.specs.map((spec, i) => (
-                    <div key={i} className="group/item">
-                      <p className="text-navy-900/30 text-[10px] font-black uppercase tracking-[0.2em] mb-2 group-hover/item:text-gold-500 transition-colors">{spec.label}</p>
-                      <p className="text-2xl font-black text-navy-900 tracking-tight leading-none">{spec.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Pricing Section */}
-              {product.pricingInfo && (
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="bg-gold-500 rounded-[3.5rem] p-12 shadow-2xl shadow-gold-500/20"
-                >
-                  <div className="flex items-center gap-5 mb-10">
-                    <div className="w-14 h-14 rounded-2xl bg-navy-900 flex items-center justify-center">
-                      <BarChart3 className="text-gold-500" size={28} />
-                    </div>
-                    <h3 className="text-2xl font-black text-navy-900 tracking-tight leading-none pt-1">Commercials</h3>
-                  </div>
-                  <p className="text-navy-900/60 font-bold mb-10 text-lg leading-snug">{product.pricingInfo.content}</p>
-                  <div className="space-y-4 mb-12">
-                    {product.pricingInfo.factors.map((factor, i) => (
-                      <div key={i} className="flex items-center gap-4 bg-white/30 p-4 rounded-xl backdrop-blur-sm">
-                        <div className="w-2 h-2 rounded-full bg-navy-900"></div>
-                        <span className="text-navy-900 font-bold text-sm tracking-tight">{factor}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <button className="w-full bg-navy-900 text-white py-6 rounded-3xl font-black text-sm uppercase tracking-[0.2em] hover:bg-navy-800 transition-all shadow-xl">
-                    Get Latest Price
+      <main className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          
+          {/* Left: Image Gallery */}
+          <div className="space-y-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="aspect-square rounded-3xl overflow-hidden border border-gray-100 shadow-sm"
+            >
+              <img 
+                src={gallery[activeImg]} 
+                alt={product.title} 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            
+            <div className="relative group">
+              <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+                {gallery.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImg(idx)}
+                    className={`flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border-2 transition-all ${
+                      activeImg === idx ? 'border-green-600 ring-2 ring-green-600/20' : 'border-transparent hover:border-gray-200'
+                    }`}
+                  >
+                    <img src={img} className="w-full h-full object-cover" alt={`Gallery ${idx}`} />
                   </button>
-                </motion.div>
-              )}
-
-              {/* Contact Assistance */}
-              <div className="p-10 rounded-[3rem] bg-navy-900 text-white flex flex-col gap-8 shadow-3xl">
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gold-500 mb-2">Need Expert Help?</p>
-                  <p className="text-2xl font-black tracking-tight leading-tight">Discuss Your Requirements</p>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex -space-x-4">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-12 h-12 rounded-full border-4 border-navy-900 bg-gray-200 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Agent" />
-                      </div>
-                    ))}
-                  </div>
-                  <button className="w-16 h-16 rounded-2xl bg-gold-500 flex items-center justify-center text-navy-900 hover:scale-110 transition-transform">
-                    <Globe size={28} />
-                  </button>
-                </div>
+                ))}
               </div>
             </div>
           </div>
+
+          {/* Right: Info */}
+          <div className="flex flex-col">
+            <span className="inline-block px-4 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-lg mb-4 self-start">
+              Premium Export Quality
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{product.title}</h1>
+            <p className="text-green-600 font-bold mb-6 flex items-center gap-2">
+              Fresh • Natural • Premium Quality
+            </p>
+
+            <p className="text-gray-600 leading-relaxed mb-8">
+              At Crosscane Overseas, we supply premium-quality {product.title} sourced from trusted agricultural farms and processed under strict quality standards. We ensure superior freshness, uniform size, excellent taste, and long shelf life.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-10 border-t border-gray-100 pt-8">
+              {[
+                { icon: <Leaf size={18} className="text-green-600" />, label: "Variety", value: product.title.split(' ')[0] },
+                { icon: <Package size={18} className="text-green-600" />, label: "Category", value: product.category },
+                { icon: <ShieldCheck size={18} className="text-green-600" />, label: "Quality", value: "Premium Export Quality" },
+                { icon: <Globe size={18} className="text-green-600" />, label: "Origin", value: "India" },
+                { icon: <Clock size={18} className="text-green-600" />, label: "Shelf Life", value: "Long" },
+                { icon: <Zap size={18} className="text-green-600" />, label: "Storage", value: "Standard" },
+                { icon: <Scale size={18} className="text-green-600" />, label: "Supply Ability", value: "Bulk / Container Load" },
+                { icon: <Award size={18} className="text-green-600" />, label: "Certification", value: "Global Standards Certified" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <div className="flex gap-2 text-sm">
+                    <span className="font-bold text-gray-400 min-w-[100px]">{item.label} :</span>
+                    <span className="text-gray-700 font-bold">{item.value}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-4 mt-auto">
+              <button className="flex-1 bg-green-900 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-800 transition-all shadow-lg shadow-green-900/10">
+                <Mail size={18} /> Request A Quote
+              </button>
+              <button className="flex-1 border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-green-600 hover:text-green-600 transition-all">
+                <FileText size={18} /> Download Datasheet
+              </button>
+            </div>
+          </div>
         </div>
-      </section>
+
+        {/* Section: Product Features */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-widest relative inline-block">
+              Product Features
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-green-600 rounded-full"></div>
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            {[
+              { icon: <Award className="text-green-600" />, text: "Premium Export Quality" },
+              { icon: <Leaf className="text-green-600" />, text: "Naturally Sweet Taste" },
+              { icon: <Zap className="text-green-600" />, text: "Uniform Size & Shape" },
+              { icon: <BadgeCheck className="text-green-600" />, text: "Hygienically Processed" },
+              { icon: <Leaf className="text-green-600" />, text: "Rich in Nutrients" },
+              { icon: <Clock className="text-green-600" />, text: "Long Shelf Life" },
+              { icon: <Package className="text-green-600" />, text: "Suitable for Bulk Supply" },
+            ].map((f, i) => (
+              <div key={i} className="flex flex-col items-center text-center group">
+                <div className="w-16 h-16 rounded-full border border-gray-100 bg-white flex items-center justify-center mb-4 group-hover:bg-green-50 transition-colors">
+                  {f.icon}
+                </div>
+                <p className="text-xs font-bold text-gray-700 leading-tight px-2">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+          {/* Section: Description */}
+          <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
+             <div className="flex flex-col md:flex-row gap-8">
+               <div className="flex-1">
+                 <h2 className="text-xl font-bold text-gray-900 mb-6 uppercase tracking-wider">Product Description</h2>
+                 <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                   Our {product.title} are carefully handpicked, sorted, and packed to maintain freshness and quality during transportation. We ensure that each product meets the highest standards of international markets.
+                 </p>
+                 <ul className="space-y-3">
+                   {[
+                     "Carefully handpicked from trusted farms",
+                     "Strict quality inspection and grading",
+                     "Safe and hygienic packaging",
+                     "Timely delivery with maximum freshness"
+                   ].map((item, i) => (
+                     <li key={i} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                       <div className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+                         <Check size={12} className="text-green-600" strokeWidth={4} />
+                       </div>
+                       {item}
+                     </li>
+                   ))}
+                 </ul>
+               </div>
+               <div className="md:w-48 h-64 rounded-2xl overflow-hidden bg-gray-100">
+                 <img src={product.image} className="w-full h-full object-cover" alt="Desc" />
+               </div>
+             </div>
+          </div>
+
+          {/* Section: Packaging */}
+          <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wider">Packaging Options</h2>
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              {[
+                { title: "Standard Box", weight: "13 KG", img: product.image },
+                { title: "Small Box", weight: "5 KG", img: product.image },
+                { title: "Bulk Pallet", weight: "Custom", img: product.image }
+              ].map((p, i) => (
+                <div key={i} className="text-center group">
+                  <div className="aspect-square rounded-2xl overflow-hidden bg-gray-50 mb-4 border border-transparent group-hover:border-green-600/20 transition-all">
+                    <img src={p.img} className="w-full h-full object-cover" alt={p.title} />
+                  </div>
+                  <p className="text-xs font-bold text-gray-900 mb-1">{p.weight}</p>
+                  <p className="text-[10px] text-gray-400 font-bold uppercase">{p.title}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-green-50 py-3 px-6 rounded-xl flex items-center justify-center gap-3">
+              <Package size={16} className="text-green-700" />
+              <p className="text-xs font-bold text-green-700">Private Label & Custom Branding Available</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section: Specifications */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wider">Product Specifications</h2>
+            <div className="space-y-0 divide-y divide-gray-50">
+              {product.specs.map((spec, i) => (
+                <div key={i} className="flex justify-between py-4 text-sm">
+                  <span className="text-gray-500 font-bold">{spec.label}</span>
+                  <span className="text-gray-900 font-bold">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative rounded-3xl overflow-hidden h-[450px] shadow-2xl">
+            <img src={product.image} className="w-full h-full object-cover" alt="Spec Bg" />
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+            <div className="absolute inset-0 flex flex-col justify-center p-12 text-white">
+               <div className="space-y-6">
+                 {[
+                   { icon: <Leaf />, title: "100% Natural & Fresh" },
+                   { icon: <BadgeCheck />, title: "Hygienically Processed" },
+                   { icon: <ShieldCheck />, title: "Pesticide Residue Free" },
+                   { icon: <Globe />, title: "Best for Global Markets" }
+                 ].map((item, i) => (
+                   <div key={i} className="flex items-center gap-4">
+                     <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                       {item.icon}
+                     </div>
+                     <span className="text-lg font-bold">{item.title}</span>
+                   </div>
+                 ))}
+               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bulk Supply Banner */}
+        <div className="bg-gray-50 rounded-[40px] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="flex flex-col md:flex-row items-center gap-8 z-10">
+            <div className="w-32 h-32 rounded-full overflow-hidden shrink-0 shadow-xl ring-4 ring-white">
+              <img src={product.image} className="w-full h-full object-cover" alt="Banner" />
+            </div>
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Looking For Bulk Supply?</h2>
+              <p className="text-gray-500 font-medium">We are ready to fulfill your requirements with the best quality products and professional service.</p>
+            </div>
+          </div>
+          <div className="flex gap-4 z-10">
+            <button className="bg-green-900 text-white px-10 py-5 rounded-xl font-bold hover:bg-green-800 transition-all shadow-xl shadow-green-900/10 flex items-center gap-2">
+              Get A Quote <ChevronRight size={18} />
+            </button>
+            <button className="bg-white border-2 border-gray-200 text-gray-700 px-10 py-5 rounded-xl font-bold hover:border-green-600 hover:text-green-600 transition-all shadow-sm">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </main>
+
+      {/* Feature Bottom Bar */}
+      <div className="bg-green-950 py-10">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+            {[
+              { icon: <ShieldCheck />, title: "Premium Quality Products" },
+              { icon: <Globe />, title: "Global Export Standards" },
+              { icon: <Zap />, title: "Competitive Pricing" },
+              { icon: <Clock />, title: "On-Time Delivery" },
+              { icon: <Users />, title: "Customer Satisfaction" },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center gap-3">
+                <div className="text-green-500 opacity-60">
+                  {React.cloneElement(item.icon, { size: 32 })}
+                </div>
+                <p className="text-white font-bold text-xs uppercase tracking-widest leading-tight">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </div>
@@ -328,5 +313,3 @@ const ProductDetail = () => {
 }
 
 export default ProductDetail
-
-
