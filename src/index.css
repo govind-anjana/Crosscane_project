@@ -5,7 +5,7 @@
   --color-royal-blue: #0A3D91;
   --color-gold: #C89B2B;
   --color-light-gold: #E0BC5A;
-  --color-white-bg: #F5F5F5;
+  --color-white-bg: #FDFDFD;
   --color-pure-white: #FFFFFF;
 }
 
@@ -17,19 +17,24 @@
   --color-bg-primary: var(--color-white-bg);
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-white-bg);
   color: var(--color-dark-navy);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-dark-navy);
+  letter-spacing: -0.04em;
+  font-weight: 800;
 }
 
 .bg-gradient-premium {
@@ -42,20 +47,37 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
 }
 
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-morphism-dark {
+  background: rgba(0, 31, 91, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .btn-premium {
   background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-light-gold) 100%);
   color: var(--color-dark-navy);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
-  box-shadow: 0 4px 15px rgba(200, 155, 43, 0.3);
+  box-shadow: 0 10px 30px rgba(200, 155, 43, 0.2);
 }
 
 .btn-premium:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(200, 155, 43, 0.4);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(200, 155, 43, 0.3);
 }
 
 @keyframes marquee {
@@ -73,4 +95,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-marquee-slow:hover {
   animation-play-state: paused;
+}
+
+/* Premium Box Shadows */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.1);
 }
