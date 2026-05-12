@@ -37,10 +37,11 @@ const ProductGrid = () => {
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Number Badge */}
-                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-sm border-4 border-white z-10 shadow-lg">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
+                </div>
+
+                {/* Number Badge */}
+                <div className="absolute top-[204px] left-1/2 -translate-x-1/2 w-10 h-10 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-sm border-4 border-white z-20 shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-500">
+                  {String(index + 1).padStart(2, '0')}
                 </div>
 
                 {/* Content Area */}

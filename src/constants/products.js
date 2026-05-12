@@ -11,6 +11,7 @@ export const PRODUCTS = [
   {
     id: 1,
     name: "Banana Powder",
+    title: "Premium Banana Powder Supplier & Exporter",
     slug: "banana-powder",
     category: "Agro",
     image: bananapowder,
@@ -18,28 +19,43 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Premium Export Quality from India",
     description: [
-      "Crosscane Overseas offers premium-quality Banana Powder processed from carefully selected fresh bananas sourced from trusted farms in India. Manufactured under hygienic conditions using advanced processing methods, our banana powder retains its natural flavor, aroma, and nutritional value.",
-      "Banana powder is widely used in the food, beverage, bakery, baby food, health supplement, and cosmetic industries due to its rich nutritional profile and versatility. It is an excellent source of potassium, dietary fiber, vitamins, and natural carbohydrates, making it a healthy ingredient for various applications.",
-      "Our banana powder is known for its fine texture, long shelf life, purity, and consistent quality. We ensure strict quality control and secure packaging standards to meet international export requirements and customer expectations worldwide."
+      "Crosscane Overseas offers high-quality Banana Powder processed from carefully selected bananas under hygienic conditions. Rich in nutrients and widely used in food processing, health products, baby foods, and bakery applications, our banana powder is known for its purity, natural taste, and long shelf life."
     ],
     features: [
-      "100% natural and hygienically processed",
-      "Rich in nutrients and dietary fiber",
-      "Fine texture with natural flavor",
-      "Long shelf life and export-quality packaging",
-      "Available in customized packaging options"
+      "Fine Texture & Natural Flavor",
+      "Hygienically Processed",
+      "Rich in Nutrients & Fiber",
+      "Long Shelf Life",
+      "Suitable for Food & Industrial Applications"
     ],
+    packagingOptions: [
+      "25 KG Food Grade Bags",
+      "Customized Packaging Available",
+      "Private Label Solutions"
+    ],
+    exportCapability: "Crosscane Overseas is committed to providing high-quality processed agricultural products to global markets. We ensure strict hygiene standards and reliable supply chains to meet the demands of the food and pharmaceutical industries worldwide.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Product purity & grade",
+        "Packaging requirements",
+        "Order quantity",
+        "Shipping terms & destination"
+      ],
+      cta: "For bulk orders and technical specifications, please contact our team directly."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Form", value: "Fine Powder" },
       { label: "Purity", value: "100% Natural" },
-      { label: "Packaging", value: "Customized Export Grade" }
+      { label: "Packaging", value: "Food Grade Bags" }
     ],
     applications: ['Food', 'Beverage', 'Bakery', 'Baby Food', 'Cosmetics', 'Supplements']
   },
   {
     id: 2,
     name: "Cavendish G9 Banana",
+    title: "Premium Cavendish G9 Banana Supplier & Exporter",
     slug: "g9-banana",
     category: "Agro",
     image: banana,
@@ -47,17 +63,44 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Premium Export Grade from India",
     description: [
-      "Crosscane Overseas is a leading exporter of premium Cavendish G9 Bananas, sourced from the most fertile plantations in India. Known for their superior taste, size, and nutritional value, our bananas are harvested at the perfect stage of maturity to ensure maximum shelf life and quality during transit.",
-      "The Cavendish G9 variety is globally preferred for its high energy content, dietary fiber, and essential vitamins like Vitamin B6 and Vitamin C. Our bananas are processed in modern pack-houses under strict quality controls and packed in international standard ventilated boxes.",
-      "We maintain a robust cold chain and logistics network to deliver fresh, residue-free G9 bananas to international markets, ensuring they reach our customers in perfect condition."
+      "At Crosscane Overseas, we specialize in supplying premium-quality Cavendish G9 Bananas to domestic and international markets. Our bananas are carefully cultivated using advanced farming practices to ensure superior taste, uniform size, excellent freshness, and long shelf life.",
+      "Recognized globally for their naturally sweet flavor, vibrant yellow color, and high nutritional value, Cavendish G9 bananas are among the most preferred banana varieties for wholesale, retail, and export distribution."
     ],
     features: [
-      "Premium Cavendish G9 variety",
-      "Uniform size and vibrant yellow color",
-      "Rich in potassium and vitamins",
-      "Hygienically processed and packed",
-      "Longer shelf life for export"
+      "Premium Export Quality",
+      "Naturally Sweet Taste & Rich Texture",
+      "Uniform Size, Shape & Color",
+      "Hygienically Processed & Packed",
+      "Long Shelf Life for Export Markets",
+      "Rich in Potassium, Fiber & Essential Nutrients",
+      "Suitable for Wholesale & Bulk Supply"
     ],
+    qualityAssurance: {
+      title: "Quality Assurance",
+      content: "We work directly with trusted farmers and agricultural networks to maintain consistent quality standards throughout cultivation, harvesting, grading, and packaging.",
+      points: [
+        "Carefully selected and graded",
+        "Free from major defects and damage",
+        "Processed under hygienic conditions",
+        "Packed to preserve freshness during transit"
+      ]
+    },
+    packagingOptions: [
+      "13 KG Export Cartons",
+      "7 KG / 5 KG Packaging",
+      "Private Label & Custom Branding Available"
+    ],
+    exportCapability: "Crosscane Overseas is committed to delivering reliable supply solutions with competitive pricing and timely shipment services. We cater to importers, distributors, wholesalers, supermarkets, and retail chains across global markets. Our focus on professionalism, product consistency, and customer satisfaction makes us a trusted partner in the fresh produce export industry.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Product grade & size",
+        "Packaging requirements",
+        "Order quantity",
+        "Export destination & shipping terms"
+      ],
+      cta: "For bulk orders, export inquiries, and latest pricing details, please contact our team directly."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Variety", value: "Cavendish G9" },
@@ -69,24 +112,52 @@ export const PRODUCTS = [
   {
     id: 3,
     name: "Chickpeas",
+    title: "Premium White Chickpeas Supplier & Exporter",
     slug: "chickpeas",
     category: "Grains",
     image: chickpeaImg,
-    shortDesc: "Premium quality chickpeas, rich in protein and fiber.",
+    shortDesc: "Premium quality white chickpeas, rich in protein and fiber.",
     price: "Inquire for Price",
-    tagline: "Premium Export Grade Pulse from India",
+    tagline: "Premium Export Grade (Kabuli Chana) from India",
     description: [
-      "Crosscane Overseas offers premium-quality Chickpeas sourced from trusted farms across India and processed under strict quality standards. Known for their rich taste, high nutritional value, and excellent quality, our chickpeas are carefully cleaned, graded, and packed to meet international export requirements.",
-      "Chickpeas are widely used in households, food processing industries, restaurants, and health food products due to their high protein, fiber, vitamins, and mineral content. They are an essential ingredient in various cuisines and are valued for their versatility and health benefits.",
-      "Our chickpeas are appreciated for their purity, uniform size, natural freshness, and long shelf life. With a commitment to quality, hygiene, and reliable supply, Crosscane Overseas ensures premium export-grade products for customers worldwide."
+      "At Crosscane Overseas, we supply premium-quality White Chickpeas (Kabuli Chana) sourced from trusted farms and processed under strict quality standards to meet domestic and international market requirements. Known for their superior quality, uniform size, rich nutritional value, and excellent taste, our white chickpeas are ideal for wholesale, retail, food processing, and export distribution.",
+      "Our products are carefully cleaned, graded, and hygienically packed to ensure maximum freshness, purity, and long shelf life during storage and transportation."
     ],
     features: [
-      "Premium-quality export-grade chickpeas",
-      "Rich source of protein and dietary fiber",
-      "Hygienically cleaned and processed",
-      "Natural taste, freshness, and long shelf life",
-      "Available in customized packaging options"
+      "Premium Export Quality",
+      "High Protein & Nutritional Value",
+      "Uniform Size, Shape & Natural Color",
+      "Hygienically Cleaned & Processed",
+      "Low Moisture Content",
+      "Long Shelf Life",
+      "Suitable for Wholesale & Bulk Supply"
     ],
+    qualityAssurance: {
+      title: "Quality Assurance",
+      content: "We maintain strict quality control throughout sourcing, processing, grading, and packaging to ensure consistent product standards.",
+      points: [
+        "Carefully cleaned and machine sorted",
+        "Free from impurities and foreign particles",
+        "Properly graded for export standards",
+        "Hygienically packed for freshness and safety"
+      ]
+    },
+    packagingOptions: [
+      "25 KG / 50 KG PP Bags",
+      "Retail Packaging Available",
+      "Private Label & Custom Branding Options"
+    ],
+    exportCapability: "Crosscane Overseas is committed to providing reliable supply solutions with competitive pricing and timely deliveries. We serve importers, wholesalers, distributors, supermarkets, and food processing companies across global markets. With a strong focus on product quality, consistency, and customer satisfaction, we aim to build long-term business partnerships worldwide.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Product grade & size",
+        "Packaging specifications",
+        "Order quantity",
+        "Export destination & shipping terms"
+      ],
+      cta: "For bulk orders, export inquiries, and latest pricing details, please contact our sales team directly."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Type", value: "Kabuli / Desi" },
@@ -98,35 +169,53 @@ export const PRODUCTS = [
   {
     id: 4,
     name: "Onions",
+    title: "Premium Red Onion Supplier & Exporter",
     slug: "onions",
     category: "Agro",
     image: onion,
-    shortDesc: "Fresh onions and a range of value-added onion products.",
+    shortDesc: "Fresh premium red onions with strong flavor and long shelf life.",
     price: "Inquire for Price",
     tagline: "Farm Fresh Quality from India",
     description: [
-      "Crosscane Overseas specializes in exporting farm-fresh Onions and a diverse range of onion by-products. Sourced from the best onion-growing regions of India, our onions are known for their pungent aroma, crisp texture, and high nutrient content.",
-      "In addition to fresh red and white onions, we offer value-added products like onion powder, dehydrated flakes, and onion paste to cater to the global food processing and seasoning industries. Our onions are strictly graded by size and quality to ensure consistency.",
-      "We follow scientific storage and packaging methods to preserve freshness and prevent moisture damage during export, guaranteeing that our customers receive the best quality onions every time."
+      "At Crosscane Overseas, we supply premium-quality Red Onions sourced from trusted agricultural regions of India. Our onions are known for their strong flavor, uniform size, excellent shelf life, and superior export quality.",
+      "Carefully selected, graded, and hygienically packed, our onions are suitable for domestic markets as well as international export requirements."
     ],
     features: [
-      "Superior quality red and white onions",
-      "Strong natural aroma and flavor",
-      "Hygienically sorted and graded",
-      "Long shelf life for global transit",
-      "Available in various sizes and packaging"
+      "Premium Export Quality",
+      "Uniform Size & Natural Color",
+      "Strong Flavor & Freshness",
+      "Long Shelf Life",
+      "Hygienically Sorted & Packed",
+      "Suitable for Wholesale & Bulk Supply"
     ],
+    packagingOptions: [
+      "5 KG / 10 KG / 25 KG / 50 KG Mesh Bags",
+      "Customized Packaging Available",
+      "Private Label & Branding Options"
+    ],
+    exportCapability: "Crosscane Overseas is committed to providing reliable supply solutions with competitive pricing and timely deliveries. We serve importers, wholesalers, distributors, supermarkets, and retail markets across global markets. Our focus on professionalism and product consistency makes us a trusted partner in the fresh produce industry.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Product grade & size",
+        "Packaging specifications",
+        "Order quantity",
+        "Export destination & shipping terms"
+      ],
+      cta: "For bulk orders, export inquiries, and latest pricing details, please contact our sales team directly."
+    },
     specs: [
       { label: "Origin", value: "India" },
-      { label: "Variety", value: "Red / White Onions" },
+      { label: "Variety", value: "Red Onions" },
       { label: "Size", value: "25mm to 65mm+" },
-      { label: "Packaging", value: "5kg to 50kg Mesh Bags" }
+      { label: "Packaging", value: "Mesh Bags (Various Sizes)" }
     ],
     applications: ['Wholesale', 'Restaurants', 'Food Processing', 'Retail Markets']
   },
   {
     id: 5,
     name: "Banana Fiber",
+    title: "Premium Banana Fiber Supplier & Exporter",
     slug: "banana-fibers",
     category: "Textiles",
     image: bananaFiber,
@@ -134,18 +223,31 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Sustainable & Strong Natural Fiber",
     description: [
-      "Crosscane Overseas offers premium-quality Banana Fiber extracted from natural banana plant stems sourced from trusted farms in India. Processed using eco-friendly and hygienic methods, our banana fiber is known for its durability, strength, and sustainable nature.",
-      "Banana fiber is widely used in the textile, handicraft, paper, packaging, rope, mat, and eco-friendly product industries due to its biodegradable and versatile properties. It is valued as a sustainable alternative to synthetic fibers and is increasingly preferred in environmentally conscious markets worldwide.",
-      "Our banana fiber is appreciated for its natural texture, high tensile strength, lightweight quality, and long-lasting performance. At Crosscane Overseas, we maintain strict quality standards and reliable packaging to ensure premium export-grade products for global customers."
+      "At Crosscane Overseas, we supply premium-quality Banana Fiber extracted from high-quality banana stems using advanced processing methods. Banana fiber is an eco-friendly, biodegradable, and durable natural fiber widely used in textile, handicraft, paper, and sustainable product industries."
     ],
     features: [
-      "100% natural and eco-friendly fiber",
-      "Strong, durable, and lightweight material",
-      "Biodegradable and sustainable product",
-      "Suitable for textile, handicraft, and industrial applications",
-      "Hygienically processed with export-quality standards",
-      "Available in customized packaging options"
+      "Eco-Friendly & Biodegradable",
+      "Strong & Durable Natural Fiber",
+      "Lightweight & Sustainable Material",
+      "Suitable for Textile & Industrial Use",
+      "Export Quality Processing"
     ],
+    packagingOptions: [
+      "Bundled Fiber Packaging",
+      "Bale Packing Available",
+      "Customized Bulk Supply Options"
+    ],
+    exportCapability: "Crosscane Overseas is dedicated to promoting sustainable and eco-friendly products from India. We offer reliable supply solutions for banana fiber with a focus on quality consistency and timely international shipping to support green industries globally.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Fiber grade & length",
+        "Moisture content",
+        "Order quantity",
+        "Shipping destination"
+      ],
+      cta: "For bulk orders and eco-friendly product inquiries, please contact our team directly."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Source", value: "Banana Plant Stems" },
@@ -157,6 +259,7 @@ export const PRODUCTS = [
   {
     id: 6,
     name: "Textile",
+    title: "Premium Textile Products Supplier & Exporter",
     slug: "textiles",
     category: "Textiles",
     image: textile,
@@ -164,18 +267,26 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Precision Crafted Quality from India",
     description: [
-      "Crosscane Overseas offers premium-quality Textile Products crafted with precision, durability, and superior workmanship. Sourced and manufactured using quality raw materials and modern production standards, our textile products reflect the rich textile heritage and craftsmanship of India.",
-      "We deal in a wide range of textile products suitable for domestic and international markets, including fabrics, garments, home textiles, cotton products, and customized textile solutions. Our products are widely appreciated for their quality, comfort, elegant designs, and long-lasting performance.",
-      "With a strong commitment to quality assurance, timely delivery, and customer satisfaction, Crosscane Overseas ensures that all textile products meet international standards and export requirements. We focus on delivering reliable products that combine style, functionality, and value for global customers."
+      "Crosscane Overseas supplies high-quality textile products manufactured with precision and industry-standard quality control. We cater to wholesalers, distributors, and international buyers with reliable supply solutions and customized product options."
     ],
     features: [
-      "Premium-quality textile products",
-      "Durable, comfortable, and finely crafted materials",
-      "Wide range of fabrics and textile solutions",
-      "Suitable for domestic and international markets",
-      "Export-quality packaging and quality assurance",
-      "Available in customized designs and packaging options"
+      "Premium Quality Materials",
+      "Durable & Industry Standard Products",
+      "Customized Designs & Specifications",
+      "Bulk Supply Capability",
+      "Export-Grade Packaging"
     ],
+    exportCapability: "Crosscane Overseas leverages India's rich textile heritage to provide world-class fabrics and garments. We ensure rigorous quality checks and timely shipments to meet international fashion and home decor standards.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Material quality & type",
+        "Design complexity",
+        "Order volume",
+        "Packaging requirements"
+      ],
+      cta: "For customized textile solutions and bulk orders, please contact our export team."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Type", value: "Fabrics, Garments, Cotton" },
@@ -187,6 +298,7 @@ export const PRODUCTS = [
   {
     id: 7,
     name: "Spices",
+    title: "Premium Spices Supplier & Exporter",
     slug: "spices",
     category: "Spices",
     image: spices,
@@ -194,18 +306,43 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Authentic Flavors & Intense Aromas",
     description: [
-      "Crosscane Overseas offers a wide range of premium-quality Indian Spices, sourced directly from the finest spice-growing regions across India. Our spices are processed and packed under strict quality and hygienic standards to retain their natural oils, intense aroma, and vibrant flavor.",
-      "We provide a comprehensive selection of whole and ground spices, including Cardamom (Ilaichi), Cloves (Long), Black Pepper, Red Chilli, Ginger, Cumin (Jira), Turmeric, and Coriander. Each spice is carefully selected for its purity and potency, ensuring an authentic culinary experience for customers worldwide.",
-      "Our spices are widely used in the food industry, restaurants, and households for their exceptional quality and health benefits. With a commitment to excellence and reliable supply, Crosscane Overseas delivers export-grade spices that meet international food safety requirements."
+      "We offer a wide range of premium Indian spices sourced from trusted farms and processed under strict hygienic standards. Our spices are known for their rich aroma, natural flavor, freshness, and high purity, making them ideal for domestic and international markets."
     ],
     features: [
-      "Premium-quality authentic Indian spices",
-      "Rich in natural oils and intense aroma",
-      "Hygienically processed and sortex cleaned",
-      "Wide range including Cardamom, Cloves, Turmeric, and more",
-      "Long shelf life with moisture-proof packaging",
-      "Available in customized bulk and retail packaging"
+      "Rich Aroma & Natural Taste",
+      "Hygienically Processed & Packed",
+      "High Purity Standards",
+      "Long Shelf Life",
+      "Export Quality Products"
     ],
+    qualityAssurance: {
+      title: "Available Spices",
+      content: "We provide a comprehensive selection of premium Indian spices including:",
+      points: [
+        "Turmeric",
+        "Red Chilli",
+        "Coriander",
+        "Cumin",
+        "Garam Masala",
+        "Other Indian Spices"
+      ]
+    },
+    packagingOptions: [
+      "5 KG / 10 KG / 25 KG Bags",
+      "Vacuum Sealed Packaging Available",
+      "Private Label & Custom Branding Options"
+    ],
+    exportCapability: "Crosscane Overseas is a trusted name in the global spice trade. We ensure that every batch of spices undergoes rigorous quality testing and is packed in moisture-proof containers to maintain freshness during long-distance transit.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Spice variety & grade",
+        "Whole vs Ground form",
+        "Order quantity",
+        "Packaging type (Vacuum vs Standard)"
+      ],
+      cta: "For current market pricing and spice catalog, please contact our export desk."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Range", value: "Whole & Ground Spices" },
@@ -217,6 +354,7 @@ export const PRODUCTS = [
   {
     id: 8,
     name: "Jaggery Powder",
+    title: "Premium Jaggery Powder Supplier & Exporter",
     slug: "jegry-powder",
     category: "Commodities",
     image:  jaggery,
@@ -224,18 +362,31 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Natural Traditional Sweetener",
     description: [
-      "Crosscane Overseas offers premium-quality Jaggery Powder made from carefully selected sugarcane processed under hygienic and controlled conditions. Our jaggery powder is produced using traditional methods combined with modern quality standards to preserve its natural taste, aroma, and nutritional value.",
-      "Jaggery powder is widely used in food processing, confectionery, bakery, beverages, and household cooking as a natural sweetener. Rich in minerals and nutrients, it is considered a healthier alternative to refined sugar and is valued for its authentic flavor and health benefits.",
-      "Our jaggery powder is known for its purity, fine texture, rich golden color, and long shelf life. At Crosscane Overseas, we ensure strict quality control and export-grade packaging to meet international standards and customer expectations worldwide."
+      "Crosscane Overseas supplies premium-quality Jaggery Powder made from naturally processed sugarcane without harmful chemicals. Known for its rich taste, natural sweetness, and nutritional value, our jaggery powder is widely used in food, beverage, and health industries."
     ],
     features: [
-      "100% natural and chemical-free sweetener",
-      "Rich in minerals and natural nutrients",
-      "Fine texture with authentic taste and aroma",
-      "Hygienically processed under quality standards",
-      "Long shelf life with export-quality packaging",
-      "Available in customized packaging options"
+      "Natural & Chemical-Free Processing",
+      "Rich Taste & Aroma",
+      "Fine Texture & Easy Solubility",
+      "Hygienically Packed",
+      "Export Quality Standards"
     ],
+    packagingOptions: [
+      "500g / 1 KG Retail Packs",
+      "25 KG / 50 KG Bulk Packaging",
+      "Custom Branding & Private Labeling"
+    ],
+    exportCapability: "We specialize in the export of traditional Indian sweeteners to health-conscious markets globally. Our jaggery powder is processed to meet international food grade standards, ensuring a pure and reliable supply for our partners.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Sugarcane harvest season",
+        "Purity level & color grade",
+        "Packaging size (Retail vs Bulk)",
+        "Shipping destination"
+      ],
+      cta: "Contact our sales team for bulk pricing and private label opportunities."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Source", value: "Pure Sugarcane" },
@@ -247,6 +398,7 @@ export const PRODUCTS = [
   {
     id: 9,
     name: "Soyabean",
+    title: "Premium Soybean Supplier & Exporter",
     slug: "soyabean",
     category: "Grains",
     image: sayabin,
@@ -254,17 +406,31 @@ export const PRODUCTS = [
     price: "Inquire for Price",
     tagline: "Nutrient-Rich Legume from India",
     description: [
-      "Crosscane Overseas is a prominent exporter of high-grade Soyabeans, sourced from the primary soy-growing hubs of India. Our soyabeans are valued for their high protein and oil content, making them a versatile choice for food processing and industrial applications.",
-      "We ensure that our soyabeans undergo rigorous cleaning and grading processes to remove impurities and provide a uniform product. Indian non-GMO soyabeans are highly sought after in international markets for their natural quality and nutritional density.",
-      "Whether for soy milk, tofu, animal feed, or soy oil production, our premium soyabeans meet the highest global standards for quality and safety."
+      "We supply premium-quality Soybeans sourced from trusted agricultural farms and processed under strict quality standards. Our soybeans are rich in protein, highly nutritious, and suitable for food processing, oil extraction, animal feed, and export markets."
     ],
     features: [
-      "High protein and oil content",
-      "Non-GMO and naturally grown",
-      "Machine cleaned and sortex quality",
-      "Uniform grain size and purity",
-      "Excellent for various industrial uses"
+      "High Protein Content",
+      "Uniform Size & Natural Quality",
+      "Hygienically Cleaned & Processed",
+      "Low Moisture Content",
+      "Suitable for Bulk & Export Supply"
     ],
+    packagingOptions: [
+      "25 KG / 50 KG PP Bags",
+      "Bulk Packaging Available",
+      "Private Label & Custom Branding Options"
+    ],
+    exportCapability: "Crosscane Overseas provides robust logistics for bulk soyabean exports. We maintain close ties with farmers and processing centers to ensure a consistent and high-quality supply throughout the export season.",
+    pricingInfo: {
+      content: "Pricing may vary depending on:",
+      factors: [
+        "Protein & Oil percentage",
+        "Cleaning level (MC/Sortex)",
+        "Order volume",
+        "Shipping terms (FOB/CIF)"
+      ],
+      cta: "Reach out to our grains department for the latest market quotes and specifications."
+    },
     specs: [
       { label: "Origin", value: "India" },
       { label: "Variety", value: "Yellow Soyabean" },
@@ -274,3 +440,4 @@ export const PRODUCTS = [
     applications: ['Oil Extraction', 'Animal Feed', 'Food Processing', 'Soy Products']
   }
 ]
+

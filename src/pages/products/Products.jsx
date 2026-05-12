@@ -113,7 +113,7 @@ const Products = () => {
                     <Link to={`/services/${product.slug}`}>
                       <h3 className="text-xl font-semibold text-navy-900 mb-2 group-hover:text-gold-500 transition-colors">{product.name}</h3>
                     </Link>
-                    <p className="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-2">{product.description}</p>
+                    <p className="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-2">{product.shortDesc}</p>
                     <div className="flex items-center justify-between pt-6 border-t border-gray-50">
                       <span className="text-navy-900 font-bold text-sm uppercase tracking-widest">{product.price}</span>
                       <Link to={`/services/${product.slug}`} className="w-10 h-10 bg-bg-primary text-navy-900 rounded-xl flex items-center justify-center hover:bg-gold-500 hover:text-white transition-all">
