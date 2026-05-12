@@ -115,7 +115,7 @@ const Products = () => {
                   <div className="bg-white rounded-[2.5rem] overflow-hidden border border-gray-50 shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-3xl hover:-translate-y-3 transition-all duration-700 h-full flex flex-col">
                     {/* Image Container */}
                     <div className="relative h-72 overflow-hidden bg-gray-50">
-                      <Link to={`/services/${product.slug}`} className="block h-full">
+                      <Link to={`/products/${product.slug}`} className="block h-full">
                         <img 
                           src={product.image} 
                           alt={product.name} 

@@ -29,7 +29,7 @@ const ProductGrid = () => {
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group"
             >
-              <Link to={`/services/${product.slug}`} className="block relative">
+              <Link to={`/products/${product.slug}`} className="block relative">
                 {/* Image Area */}
                 <div className="h-56 overflow-hidden relative">
                   <img

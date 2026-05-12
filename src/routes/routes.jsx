@@ -15,7 +15,7 @@ const AllRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/our-team" element={<Team />} />
       <Route path="/products" element={<Products />} />
-      <Route path="/services/:slug" element={<ProductDetail />} />
+      <Route path="/products/:slug" element={<ProductDetail />} />
     </Routes>
   );
 };

@@ -19,7 +19,9 @@ import {
   BadgeCheck,
   Scale,
   Award,
-  Zap
+  Zap,
+  Star,
+  Truck
 } from 'lucide-react'
 import { PRODUCTS } from '../../constants/products'
 
@@ -43,98 +45,98 @@ const ProductDetail = () => {
       <Navbar />
 
       {/* Breadcrumbs */}
-      <div className="bg-gray-50 py-4 mt-20">
+      <div className="bg-gray-50 py-4 mt-5 border-b border-gray-100">
         <div className="container mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm text-gray-500 font-medium">
-            <Link to="/" className="flex items-center gap-1 hover:text-green-600 transition-colors">
+            <Link to="/" className="flex items-center gap-1 hover:text-navy-900 transition-colors">
               <Home size={14} /> Home
             </Link>
             <ChevronRight size={14} />
-            <Link to="/products" className="hover:text-green-600 transition-colors">Products</Link>
+            <Link to="/products" className="hover:text-navy-900 transition-colors">Products</Link>
             <ChevronRight size={14} />
             <span className="text-gray-400 capitalize">{product.category}</span>
             <ChevronRight size={14} />
-            <span className="text-green-700 font-bold">{product.title}</span>
+            <span className="text-navy-900 font-bold">{product.title}</span>
           </nav>
         </div>
       </div>
 
-      <main className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+      <main className="container mx-auto px-6 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-15">
           
           {/* Left: Image Gallery */}
           <div className="space-y-4">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="aspect-square rounded-3xl overflow-hidden border border-gray-100 shadow-sm"
+              className="aspect-square rounded-3xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 p-2"
             >
               <img 
                 src={gallery[activeImg]} 
                 alt={product.title} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-3xl"
               />
             </motion.div>
             
-            <div className="relative group">
+            {/* <div className="relative group border">
               <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                 {gallery.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImg(idx)}
-                    className={`flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border-2 transition-all ${
-                      activeImg === idx ? 'border-green-600 ring-2 ring-green-600/20' : 'border-transparent hover:border-gray-200'
+                    className={`flex-shrink-0 w-24 h-24 rounded-2xl overflow-hidden border-2 transition-all ${
+                      activeImg === idx ? 'border-gold-500 ring-4 ring-gold-500/10' : 'border-transparent hover:border-gray-200'
                     }`}
                   >
                     <img src={img} className="w-full h-full object-cover" alt={`Gallery ${idx}`} />
                   </button>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right: Info */}
           <div className="flex flex-col">
-            <span className="inline-block px-4 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-lg mb-4 self-start">
+            <span className="inline-block px-4 py-1 bg-gold-500/10 text-gold-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-3 self-start">
               Premium Export Quality
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{product.title}</h1>
-            <p className="text-green-600 font-bold mb-6 flex items-center gap-2">
-              Fresh • Natural • Premium Quality
+            <h2 className="text-2xl md:text-4xl font-bold text-navy-900 mb-3 tracking-tight">{product.title}</h2>
+            <p className="text-gold-500 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-widest">
+             • Fresh  • Natural  • Global Standard
             </p>
 
-            <p className="text-gray-600 leading-relaxed mb-8">
-              At Crosscane Overseas, we supply premium-quality {product.title} sourced from trusted agricultural farms and processed under strict quality standards. We ensure superior freshness, uniform size, excellent taste, and long shelf life.
+            <p className="text-gray-500  mb-4 text-base font-medium text-justify">
+              At Crosscane Overseas, we supply premium-quality {product.title} sourced from trusted agricultural hubs and processed under strict global quality standards.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-10 border-t border-gray-100 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-8 border-t border-gray-100 pt-8">
               {[
-                { icon: <Leaf size={18} className="text-green-600" />, label: "Variety", value: product.title.split(' ')[0] },
-                { icon: <Package size={18} className="text-green-600" />, label: "Category", value: product.category },
-                { icon: <ShieldCheck size={18} className="text-green-600" />, label: "Quality", value: "Premium Export Quality" },
-                { icon: <Globe size={18} className="text-green-600" />, label: "Origin", value: "India" },
-                { icon: <Clock size={18} className="text-green-600" />, label: "Shelf Life", value: "Long" },
-                { icon: <Zap size={18} className="text-green-600" />, label: "Storage", value: "Standard" },
-                { icon: <Scale size={18} className="text-green-600" />, label: "Supply Ability", value: "Bulk / Container Load" },
-                { icon: <Award size={18} className="text-green-600" />, label: "Certification", value: "Global Standards Certified" },
+                { icon: <Leaf size={18} className="text-gold-500" />, label: "Variety", value: product.title.split(' ')[0] },
+                { icon: <Package size={18} className="text-gold-500" />, label: "Category", value: product.category },
+                { icon: <ShieldCheck size={18} className="text-gold-500" />, label: "Quality", value: "Grade A Export" },
+                { icon: <Globe size={18} className="text-gold-500" />, label: "Origin", value: "India" },
+                { icon: <Clock size={18} className="text-gold-500" />, label: "Shelf Life", value: "Long" },
+                { icon: <Zap size={18} className="text-gold-500" />, label: "Storage", value: "Standard" },
+                { icon: <Scale size={18} className="text-gold-500" />, label: "Supply Ability", value: "Bulk / Container Load" },
+                { icon: <Award size={18} className="text-gold-500" />, label: "Certification", value: "Global Standards Certified" },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center shrink-0">
-                    {item.icon}
+                  <div key={i} className="flex items-center gap-4 group py-1">
+                    <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-gold-500/10 transition-all duration-300">
+                      {item.icon}
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                      <span className="font-bold text-gray-400 uppercase text-[10px] tracking-widest whitespace-nowrap">{item.label} :</span>
+                      <span className="text-navy-900 font-black text-sm tracking-tight">{item.value}</span>
+                    </div>
                   </div>
-                  <div className="flex gap-2 text-sm">
-                    <span className="font-bold text-gray-400 min-w-[100px]">{item.label} :</span>
-                    <span className="text-gray-700 font-bold">{item.value}</span>
-                  </div>
-                </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-auto">
-              <button className="flex-1 bg-green-900 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-800 transition-all shadow-lg shadow-green-900/10">
+            <div className="flex flex-wrap gap-4 mt-auto pt-1 border-t border-gray-50">
+              <button className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[14px] uppercase   flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
                 <Mail size={18} /> Request A Quote
               </button>
-              <button className="flex-1 border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-green-600 hover:text-green-600 transition-all">
+              <button className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[14px]   flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all">
                 <FileText size={18} /> Download Datasheet
               </button>
             </div>
@@ -142,118 +144,117 @@ const ProductDetail = () => {
         </div>
 
         {/* Section: Product Features */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-widest relative inline-block">
+        <div className="mb-15">
+          <div className="text-center mb-16">
+            <span className="text-gold-500 font-bold text-[13px] uppercase tracking-[0.4em] mb-4 inline-block">Capabilities </span>&nbsp;
+            <h2 className="text-3xl font-bold text-navy-900 uppercase tracking-tight relative inline-block">
               Product Features
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-green-600 rounded-full"></div>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-gold-500 rounded-full"></div>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
             {[
-              { icon: <Award className="text-green-600" />, text: "Premium Export Quality" },
-              { icon: <Leaf className="text-green-600" />, text: "Naturally Sweet Taste" },
-              { icon: <Zap className="text-green-600" />, text: "Uniform Size & Shape" },
-              { icon: <BadgeCheck className="text-green-600" />, text: "Hygienically Processed" },
-              { icon: <Leaf className="text-green-600" />, text: "Rich in Nutrients" },
-              { icon: <Clock className="text-green-600" />, text: "Long Shelf Life" },
-              { icon: <Package className="text-green-600" />, text: "Suitable for Bulk Supply" },
+              { icon: <Award size={24} className="text-gold-500" />, text: "Premium Export Quality" },
+              { icon: <Leaf size={24} className="text-gold-500" />, text: "Naturally Fresh & Pure" },
+              { icon: <Zap size={24} className="text-gold-500" />, text: "Uniform Size & Shape" },
+              { icon: <BadgeCheck size={24} className="text-gold-500" />, text: "Hygienically Processed" },
+              { icon: <Star size={24} className="text-gold-500" />, text: "Rich in Nutrients" },
+              { icon: <Clock size={24} className="text-gold-500" />, text: "Long Shelf Life" },
+              { icon: <Package size={24} className="text-gold-500" />, text: "Suitable for Bulk Export" },
             ].map((f, i) => (
-              <div key={i} className="flex flex-col items-center text-center group">
-                <div className="w-16 h-16 rounded-full border border-gray-100 bg-white flex items-center justify-center mb-4 group-hover:bg-green-50 transition-colors">
+              <div key={i} className="flex flex-col items-center text-center group cursor-default">
+                <div className="w-16 h-16 rounded-full border border-gray-100 bg-white flex items-center justify-center mb-4 group-hover:bg-gold-500/10 transition-all duration-300 shadow-sm">
                   {f.icon}
                 </div>
-                <p className="text-xs font-bold text-gray-700 leading-tight px-2">{f.text}</p>
+                <p className="text-[10px] font-black text-navy-900 leading-tight px-2 uppercase tracking-widest">{f.text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 ">
           {/* Section: Description */}
-          <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
-             <div className="flex flex-col md:flex-row gap-8">
-               <div className="flex-1">
-                 <h2 className="text-xl font-bold text-gray-900 mb-6 uppercase tracking-wider">Product Description</h2>
-                 <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                   Our {product.title} are carefully handpicked, sorted, and packed to maintain freshness and quality during transportation. We ensure that each product meets the highest standards of international markets.
-                 </p>
-                 <ul className="space-y-3">
-                   {[
-                     "Carefully handpicked from trusted farms",
-                     "Strict quality inspection and grading",
-                     "Safe and hygienic packaging",
-                     "Timely delivery with maximum freshness"
-                   ].map((item, i) => (
-                     <li key={i} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
-                       <div className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center shrink-0">
-                         <Check size={12} className="text-green-600" strokeWidth={4} />
-                       </div>
-                       {item}
-                     </li>
-                   ))}
-                 </ul>
-               </div>
-               <div className="md:w-48 h-64 rounded-2xl overflow-hidden bg-gray-100">
-                 <img src={product.image} className="w-full h-full object-cover" alt="Desc" />
+          <div className="bg-white border border-gray-100 rounded-3xl p-7 md:p-14 shadow-sm relative overflow-hidden group">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 -translate-y-1/2 translate-x-1/2 rounded-full group-hover:scale-150 transition-transform duration-1000" />
+             <div className="relative z-10 max-w-2xl">
+               <h2 className="text-2xl font-black text-navy-900 mb-5 uppercase tracking-widest">Product Description</h2>
+               <p className="text-gray-500 text-lg leading-relaxed mb-5 font-medium italic text-justify">
+                 Our {product.title} are carefully handpicked, machine-graded, and hygienically packed to maintain elite freshness and quality during international transit. We ensure that every batch meets the highest standards of international trade.
+               </p>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {[
+                   "Carefully handpicked from trusted farms",
+                   "Strict quality inspection and grading",
+                   "Safe and hygienic packaging",
+                   "Timely delivery with maximum freshness",
+                   "Zero-defect quality assurance",
+                   "Environmentally conscious sourcing"
+                 ].map((item, i) => (
+                   <div key={i} className="flex items-center gap-4 text-xs text-navy-800 font-bold group/item">
+                     <div className="w-8 h-8 rounded-full bg-navy-900 text-gold-500 flex items-center justify-center shrink-0 group-hover/item:bg-gold-500 group-hover/item:text-navy-900 transition-all">
+                       <Check size={14} strokeWidth={4} />
+                     </div>
+                     {item}
+                   </div>
+                 ))}
                </div>
              </div>
           </div>
 
           {/* Section: Packaging */}
-          <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wider">Packaging Options</h2>
-            <div className="grid grid-cols-3 gap-4 mb-8">
+          <div className="bg-white border border-gray-100 rounded-3xl p-7 md:p-14 shadow-sm">
+            <h2 className="text-2xl font-black text-navy-900 mb-10 uppercase tracking-widest">Packaging Options</h2>
+            <div className="grid grid-cols-3 gap-6 mb-12">
               {[
-                { title: "Standard Box", weight: "13 KG", img: product.image },
-                { title: "Small Box", weight: "5 KG", img: product.image },
-                { title: "Bulk Pallet", weight: "Custom", img: product.image }
+                { title: "Standard Box", weight: "13 KG", icon: <Package size={32} /> },
+                { title: "Commercial", weight: "5 KG", icon: <Zap size={32} /> },
+                { title: "Bulk Supply", weight: "Custom", icon: <Truck size={32} /> }
               ].map((p, i) => (
                 <div key={i} className="text-center group">
-                  <div className="aspect-square rounded-2xl overflow-hidden bg-gray-50 mb-4 border border-transparent group-hover:border-green-600/20 transition-all">
-                    <img src={p.img} className="w-full h-full object-cover" alt={p.title} />
+                  <div className="aspect-square rounded-3xl bg-gray-50 mb-6 flex items-center justify-center text-gold-500 border border-transparent group-hover:border-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm">
+                    {p.icon}
                   </div>
-                  <p className="text-xs font-bold text-gray-900 mb-1">{p.weight}</p>
-                  <p className="text-[10px] text-gray-400 font-bold uppercase">{p.title}</p>
+                  <p className="text-sm font-black text-navy-900 mb-0">{p.weight}</p>
+                  <p className="text-[11px] text-gray-600 font-bold uppercase tracking-widest">{p.title}</p>
                 </div>
               ))}
             </div>
-            <div className="bg-green-50 py-3 px-6 rounded-xl flex items-center justify-center gap-3">
-              <Package size={16} className="text-green-700" />
-              <p className="text-xs font-bold text-green-700">Private Label & Custom Branding Available</p>
+            <div className="bg-navy-900 py-4 px-8 rounded-2xl flex items-center justify-center gap-4 group hover:bg-gold-500 transition-colors">
+              <ShieldCheck size={18} className="text-gold-500 group-hover:text-navy-900" />
+              <p className="text-xs font-bold text-white group-hover:text-navy-900 uppercase tracking-widest">Private Label & Custom Branding</p>
             </div>
           </div>
         </div>
 
         {/* Section: Specifications */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-          <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wider">Product Specifications</h2>
-            <div className="space-y-0 divide-y divide-gray-50">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  mb-20">
+          <div className="bg-white border border-gray-100 rounded-3xl p-7 md:px-14">
+            <h2 className="text-2xl font-black text-navy-900 mb-5 uppercase tracking-widest">Product Specifications</h2>
+            <div className="space-y-0 divide-y divide-gray-100">
               {product.specs.map((spec, i) => (
-                <div key={i} className="flex justify-between py-4 text-sm">
-                  <span className="text-gray-500 font-bold">{spec.label}</span>
-                  <span className="text-gray-900 font-bold">{spec.value}</span>
+                <div key={i} className="flex justify-between py-4 group">
+                  <span className="text-[11px] font-bold text-gray-500 uppercase group-hover:text-gold-500 transition-colors">{spec.label}</span>
+                  <span className="text-sm font-bold text-navy-900">{spec.value}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative rounded-3xl overflow-hidden h-[450px] shadow-2xl">
-            <img src={product.image} className="w-full h-full object-cover" alt="Spec Bg" />
-            <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+          <div className="relative rounded-3xl overflow-hidden w-[450px] h-[350px] shadow-2xl group ">
+            <img src={product.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Spec Bg" />
+            <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[2px]"></div>
             <div className="absolute inset-0 flex flex-col justify-center p-12 text-white">
-               <div className="space-y-6">
+               <div className="space-y-8">
                  {[
                    { icon: <Leaf />, title: "100% Natural & Fresh" },
                    { icon: <BadgeCheck />, title: "Hygienically Processed" },
                    { icon: <ShieldCheck />, title: "Pesticide Residue Free" },
                    { icon: <Globe />, title: "Best for Global Markets" }
                  ].map((item, i) => (
-                   <div key={i} className="flex items-center gap-4">
-                     <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                       {item.icon}
+                   <div key={i} className="flex items-center gap-3 group/li">
+                     <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover/li:bg-gold-500 group-hover/li:border-gold-500 transition-all">
+                       {React.cloneElement(item.icon, { size: 24 })}
                      </div>
-                     <span className="text-lg font-bold">{item.title}</span>
+                     <span className="text-xl font-bold tracking-tight uppercase">{item.title}</span>
                    </div>
                  ))}
                </div>
@@ -261,22 +262,26 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* Bulk Supply Banner */}
-        <div className="bg-gray-50 rounded-[40px] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
-          <div className="flex flex-col md:flex-row items-center gap-8 z-10">
-            <div className="w-32 h-32 rounded-full overflow-hidden shrink-0 shadow-xl ring-4 ring-white">
+        {/* Bulk Supply Banner - Corporate Access */}
+        <div className="bg-navy-900 rounded-3xl p-12 md:p-16 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 border border-white/10 shadow-2xl shadow-navy-900/40 group">
+          {/* Decorative element */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/10 -translate-y-1/2 translate-x-1/2 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="flex flex-col md:flex-row items-center gap-10 z-10">
+            <div className="w-40 h-40 rounded-3xl overflow-hidden shrink-0 shadow-2xl ring-3 ring-white -rotate-3 group-hover:rotate-0 transition-transform duration-700">
               <img src={product.image} className="w-full h-full object-cover" alt="Banner" />
             </div>
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Looking For Bulk Supply?</h2>
-              <p className="text-gray-500 font-medium">We are ready to fulfill your requirements with the best quality products and professional service.</p>
+            <div className="text-center md:text-left space-y-3">
+              <span className="text-gold-500 font-bold text-[13px] uppercase block">Corporate Access</span>
+              <h2 className="text-2xl lg:text-4xl font-bold text-white tracking-tighter uppercase leading-[0.95]"><span className='text-white'>Ready For <br/>Bulk Supply?</span></h2>
+              <p className="text-white/60 font-medium max-w-md">Connect directly with our global export directors for exclusive technical briefings and bulk volume pricing.</p>
             </div>
           </div>
-          <div className="flex gap-4 z-10">
-            <button className="bg-green-900 text-white px-10 py-5 rounded-xl font-bold hover:bg-green-800 transition-all shadow-xl shadow-green-900/10 flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-4 z-10 w-full lg:w-auto">
+            <button className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
               Get A Quote <ChevronRight size={18} />
             </button>
-            <button className="bg-white border-2 border-gray-200 text-gray-700 px-10 py-5 rounded-xl font-bold hover:border-green-600 hover:text-green-600 transition-all shadow-sm">
+            <button className="flex-1 lg:flex-none bg-white/5 border-2 border-white/10 text-white px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white hover:text-navy-900 transition-all active:scale-95 flex items-center justify-center gap-3 backdrop-blur-sm">
               Contact Us
             </button>
           </div>
@@ -284,21 +289,21 @@ const ProductDetail = () => {
       </main>
 
       {/* Feature Bottom Bar */}
-      <div className="bg-green-950 py-10">
+      <div className="bg-white py-20 border-t border-white/5">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
             {[
-              { icon: <ShieldCheck />, title: "Premium Quality Products" },
-              { icon: <Globe />, title: "Global Export Standards" },
-              { icon: <Zap />, title: "Competitive Pricing" },
+              { icon: <ShieldCheck />, title: "Premium Quality" },
+              { icon: <Globe />, title: "Export Standards" },
+              { icon: <Zap />, title: "Competitive Price" },
               { icon: <Clock />, title: "On-Time Delivery" },
-              { icon: <Users />, title: "Customer Satisfaction" },
+              { icon: <Users />, title: "Client Trust" },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-3">
-                <div className="text-green-500 opacity-60">
-                  {React.cloneElement(item.icon, { size: 32 })}
+              <div key={i} className="flex flex-col items-center text-center gap-4 group">
+                <div className="text-gold-500 group-hover:scale-110 transition-transform duration-500">
+                  {React.cloneElement(item.icon, { size: 36 })}
                 </div>
-                <p className="text-white font-bold text-xs uppercase tracking-widest leading-tight">
+                <p className="text-black/60 font-bold text-[11px] uppercase  group-hover:text-gold-500 transition-colors">
                   {item.title}
                 </p>
               </div>
