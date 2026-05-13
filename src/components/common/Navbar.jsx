@@ -71,7 +71,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-14 md:h-20 w-auto object-contain transition-all group-hover:scale-105"
+                  className="h-14 md:h-20 w-auto object-contain transition-all "
                 />
               </Link>
             </div>
@@ -138,7 +138,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link to="/contact" className="btn-premium px-8 py-3 rounded-xl text-sm">
+              <Link to="/contact" className="btn-premium px-8 py-3 rounded-xl text-sm ">
                 Catalog
               </Link>
             </div>

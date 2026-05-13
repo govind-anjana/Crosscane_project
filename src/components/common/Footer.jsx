@@ -47,14 +47,14 @@ const Footer = () => {
   return (
     <footer className="bg-navy-900 text-white pt-10 pb-5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-10">
+        <div className="flex flex-col lg:flex-row justify-between gap-1 md:gap-12 mb-10">
           
           {/* Brand Column */}
           <div className="space-y-6 flex-[1.5] flex flex-col items-start text-left">
             <Link to="/" className="inline-block">
-              <img src={logo} alt="Crosscane Overseas" className="h-20 w-auto rounded-lg mb-4 bg-white/5 p-1 border border-white/10" />
+              <img src={logo} alt="Crosscane Overseas" className="h-20 w-auto rounded-lg mb-4 bg-white/5  border border-white/10" />
             </Link>
-            <p className="text-gray-400 leading-relaxed max-w-md">
+            <p className="text-gray-400 leading-relaxed max-w-md font-semibold">
               Empowering global trade through excellence, integrity, and innovative logistics solutions. Your trusted partner in connecting Indian excellence to the global market.
             </p>
             <div className="flex gap-4">
@@ -74,19 +74,19 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col flex-1 mt-10 lg:mt-0 items-start text-left">
-            <h4 className="text-xl font-bold mb-6 text-gold-500 uppercase tracking-widest text-sm">Explore</h4>
+          <div className="flex flex-col flex-1  lg:mt-0 items-start text-left">
+            <h4 className="text-xl font-bold mb-0 md:mb-6 text-gold-500 uppercase tracking-widest text-sm">Explore</h4>
             <ul className="space-y-4 text-gray-400">
-              <li><Link to="/" className="hover:text-gold-500 transition-all flex items-center gap-2 group">
+              <li><Link to="/" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> Home
               </Link></li>
-              <li><Link to="/about" className="hover:text-gold-500 transition-all flex items-center gap-2 group">
+              <li><Link to="/about" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> About Us
               </Link></li>
-              <li><Link to="/products" className="hover:text-gold-500 transition-all flex items-center gap-2 group">
+              <li><Link to="/products" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> Our Products
               </Link></li>
-              <li><Link to="/contact" className="hover:text-gold-500 transition-all flex items-center gap-2 group">
+              <li><Link to="/contact" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> Contact
               </Link></li>
             </ul>
@@ -100,19 +100,19 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-gold-500/50 transition-all">
                   <MapPin size={18} className="text-gold-500" />
                 </div>
-                <span className="text-sm leading-relaxed">149 Vridavan Garden Colony, Pipliyahana Square, Indore(M.P.), 452010</span>
+                <span className="text-sm leading-relaxed font-bold">149 Vridavan Garden Colony, Pipliyahana Square, Indore(M.P.), 452010</span>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-gold-500/50 transition-all">
                   <Phone size={18} className="text-gold-500" />
                 </div>
-                <a href="tel:+919406666677" className="text-sm hover:text-gold-500 transition-all">+91 94066 66677, +91 99268 05334</a>
+                <a href="tel:+919406666677" className="text-sm hover:text-gold-500 transition-all font-bold">+91 94066 66677, +91 99268 05334</a>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-gold-500/50 transition-all">
                   <Mail size={18} className="text-gold-500" />
                 </div>
-                <a href="mailto:contact@crosscaneoverseas.com" className="text-sm hover:text-gold-500 transition-all break-all">contact@crosscaneoverseas.com</a>
+                <a href="mailto:contact@crosscaneoverseas.com" className="text-sm hover:text-gold-500 transition-all break-all font-bold">contact@crosscaneoverseas.com</a>
               </li>
             </ul>
           </div>
@@ -122,10 +122,10 @@ const Footer = () => {
           <p className="text-gray-500 text-[12px] font-bold uppercase">
             © {currentYear} <span className="text-white">Crosscane Overseas</span>. All rights reserved.
           </p>
-          <div className="flex gap-8 text-[12px] font-bold text-gray-500 uppercase">
+          {/* <div className="flex gap-8 text-[12px] font-bold text-gray-500 uppercase">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
-          </div>
+          </div> */}
           <button 
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center hover:bg-white transition-all shadow-lg shadow-gold-500/20"

@@ -24,7 +24,7 @@ const Products = () => {
       <Navbar />
       
       {/* Page Header - Redesigned for Impact */}
-      <section className="pt-40 pb-24 bg-navy-900 relative overflow-hidden">
+      <section className="py-8 bg-navy-900 relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gold-500/5 -skew-x-12 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-500/10 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2" />
@@ -34,7 +34,7 @@ const Products = () => {
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-6 py-2 bg-gold-500 text-navy-900 font-black text-[10px] uppercase tracking-[0.4em] rounded-full mb-8"
+              className="inline-block px-6 py-2 bg-gold-500 text-navy-900 font-bold text-[12px] uppercase tracking-[0.1em] rounded-full mb-5"
             >
               Excellence in Trade
             </motion.span>
@@ -42,9 +42,9 @@ const Products = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black text-white mb-10 leading-tight tracking-tight"
+              className="text-3xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight"
             >
-              Premium <span className="text-gold-gradient italic">Collection</span>
+              <span className='text-white font-black'>Premium</span> <span className="text-gold-gradient italic">Collection</span>
             </motion.h1>
             
             <motion.p
@@ -71,7 +71,7 @@ const Products = () => {
                   placeholder="Search our premium goods..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-transparent border-none py-5 px-6 text-white text-lg focus:ring-0 placeholder:text-white/20 font-bold"
+                  className="w-full bg-transparent border-none py-3 px-4 text-white text-lg focus:ring-0 focus:outline-none outline-none placeholder:text-white/20 font-bold"
                 />
               </div>
             </motion.div>
@@ -80,15 +80,15 @@ const Products = () => {
       </section>
 
       {/* Filter & Grid Section */}
-      <section className="py-24 relative">
+      <section className="py-10 relative">
         <div className="container mx-auto px-6">
           {/* Categories - Horizontal Scroll on Mobile */}
-          <div className="flex flex-wrap justify-center gap-4 mb-24">
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-10 py-4 rounded-2xl text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500 border-2 ${
+                className={`px-8 py-3 rounded-2xl text-[12px] font-bold tracking-[0.2em] uppercase transition-all duration-500 border-2 ${
                   activeCategory === cat 
                   ? "bg-navy-900 text-gold-500 border-navy-900 shadow-2xl shadow-navy-900/20 -translate-y-1" 
                   : "bg-white text-navy-900 border-gray-100 hover:border-gold-500 hover:text-gold-500"
@@ -100,63 +100,42 @@ const Products = () => {
           </div>
 
           {/* Product Grid - Refined Luxury Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 border">
             <AnimatePresence mode='popLayout'>
-              {filteredProducts.map((product) => (
+              {filteredProducts.map((product, index) => (
                 <motion.div
-                  layout
                   key={product.id}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5, ease: "circOut" }}
-                  className="group relative"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group"
                 >
-                  <div className="bg-white rounded-[2.5rem] overflow-hidden border border-gray-50 shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-3xl hover:-translate-y-3 transition-all duration-700 h-full flex flex-col">
-                    {/* Image Container */}
-                    <div className="relative h-72 overflow-hidden bg-gray-50">
-                      <Link to={`/products/${product.slug}`} className="block h-full">
-                        <img 
-                          src={product.image} 
-                          alt={product.name} 
-                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                        />
-                      </Link>
-                      <div className="absolute top-6 left-6">
-                        <span className="glass-morphism px-5 py-2 rounded-full text-navy-900 text-[10px] font-black uppercase tracking-widest border border-white/50">
-                          {product.category}
-                        </span>
-                      </div>
-                      <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/20 transition-all duration-700" />
+                  <Link to={`/products/${product.slug}`} className="block relative">
+                    {/* Image Area */}
+                    <div className="h-56 overflow-hidden relative p-4 bg-gray-50/50">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                      />
                     </div>
-
-                    {/* Content */}
-                    <div className="p-10 flex flex-col flex-grow">
-                      <div className="mb-6">
-                        <Link to={`/services/${product.slug}`}>
-                          <h3 className="text-2xl font-black text-navy-900 mb-3 group-hover:text-gold-500 transition-colors leading-tight">
-                            {product.name}
-                          </h3>
-                        </Link>
-                        <p className="text-navy-900/40 text-sm font-bold leading-relaxed line-clamp-2">
-                          {product.shortDesc}
-                        </p>
-                      </div>
-
-                      <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
-                        <div className="flex flex-col">
-                          <span className="text-[10px] font-black text-navy-900/20 uppercase tracking-widest mb-1">Commercials</span>
-                          <span className="text-navy-900 font-black text-sm tracking-tight">{product.price}</span>
-                        </div>
-                        <Link 
-                          to={`/services/${product.slug}`} 
-                          className="w-14 h-14 bg-gray-50 text-navy-900 rounded-2xl flex items-center justify-center group-hover:bg-gold-500 group-hover:text-navy-900 transition-all duration-500 group-hover:rotate-45"
-                        >
-                          <ExternalLink size={20} className="group-hover:-rotate-45 transition-transform" />
-                        </Link>
-                      </div>
+    
+                    {/* Number Badge */}
+                    <div className="absolute top-[204px] left-1/2 -translate-x-1/2 w-10 h-10 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-sm border-4 border-white z-20 shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-500">
+                      {String(index + 1).padStart(2, '0')}
                     </div>
-                  </div>
+    
+                    {/* Content Area */}
+                    <div className="pt-8 pb-6 px-4 text-center">
+                      <h3 className="text-lg font-bold text-navy-900 mb-3 group-hover:text-gold-500 transition-colors">
+                        {product.name}
+                      </h3>
+                      <p className="text-navy-900/60 text-base leading-relaxed">
+                        {product.shortDesc}
+                      </p>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>
