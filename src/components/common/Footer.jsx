@@ -50,9 +50,9 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-1 md:gap-12 mb-10">
           
           {/* Brand Column */}
-          <div className="space-y-6 flex-[1.5] flex flex-col items-start text-left">
+          <div className="space-y-5 flex-[1.5] flex flex-col items-start text-left">
             <Link to="/" className="inline-block">
-              <img src={logo} alt="Crosscane Overseas" className="h-20 w-auto rounded-lg mb-4 bg-white/5  border border-white/10" />
+              <img src={logo} alt="Crosscane Overseas" className="h-20 w-auto rounded-lg mb-2 bg-white/5  border border-white/10" />
             </Link>
             <p className="text-gray-400 leading-relaxed max-w-md font-semibold">
               Empowering global trade through excellence, integrity, and innovative logistics solutions. Your trusted partner in connecting Indian excellence to the global market.
@@ -118,21 +118,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-white/10 pt-4 flex flex-col md:flex-row justify-center items-center gap-6">
           <p className="text-gray-500 text-[12px] font-bold uppercase">
             © {currentYear} <span className="text-white">Crosscane Overseas</span>. All rights reserved.
           </p>
-          {/* <div className="flex gap-8 text-[12px] font-bold text-gray-500 uppercase">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
-          </div> */}
-          <button 
+          
+          {/* <button 
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center hover:bg-white transition-all shadow-lg shadow-gold-500/20"
             aria-label="Back to Top"
           >
             <ArrowUp size={20} />
-          </button>
+          </button> */}
         </div>
       </div>
     </footer>
@@ -140,4 +137,3 @@ const Footer = () => {
 }
 
 export default Footer
-// 863bcc0d-ed85-4622-b925-272c335fb057
