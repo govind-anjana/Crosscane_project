@@ -1,6 +1,7 @@
 import chickpeaImg from '../assets/chickpea_premium.png'
 import bananapowder from '../assets/images/bananapowder.png'
-import banana from '../assets/images/banana.png'
+// import banana from '../assets/images/banana.png'
+import banana from '../assets/images/banana.png';
 import onion from '../assets/images/onions.png'
 import bananaFiber from '../assets/images/bananafiber.png'
 import textile from '../assets/images/textile.png'

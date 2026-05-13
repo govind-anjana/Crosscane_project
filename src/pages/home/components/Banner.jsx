@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import banner1 from "../../../assets/banner1.png";
 import banner2 from "../../../assets/banner2.png";
@@ -36,85 +37,120 @@ const slides = [
 
 const Banner = () => {
   const [current, setCurrent] = useState(0);
-
+  const [transition, setTransition] = useState(true);
   // Auto Slider
   useEffect(() => {
-    const slider = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  const slider = setInterval(() => {
+    setCurrent((prev) => prev + 1);
+  }, 5000);
 
-    return () => clearInterval(slider);
-  }, []);
+  return () => clearInterval(slider);
+}, []);
+useEffect(() => {
+  if (current === slides.length) {
+    setTimeout(() => {
+      setTransition(false);
+      setCurrent(0);
+    }, 800);
+
+    setTimeout(() => {
+      setTransition(true);
+    }, 850);
+  }
+}, [current]);
+useEffect(() => {
+  slides.forEach((slide) => {
+    const img = new Image();
+    img.src = slide.image;
+  });
+}, []);
+  const renderHighlightedText = (text, highlight) => {
+    if (!highlight) return text;
+    const parts = text.split(new RegExp(`(${highlight})`, "gi"));
+    return parts.map((part, i) =>
+      part.toLowerCase() === highlight.toLowerCase() ? (
+        <span key={i} className="text-gold-500">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
 
   return (
-    <section className="relative h-screen overflow-hidden">
-
+    <section className="relative h-screen overflow-hidden bg-navy-900">
       {/* Background Slider */}
-      <AnimatePresence mode="wait">
+      <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          key={current}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
+          className="flex w-full h-full"
+          animate={{ x: `-${current * 100}%` }}
+          transition={
+            transition
+              ? {
+                  duration: 0.8,
+                  ease: "easeInOut",
+                }
+              : {
+                  duration: 0,
+                }
+          }
         >
-          <img
-            src={slides[current].image}
-            alt="Crosscane Overseas Banner"
-            className="w-full h-full object-cover"
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/50 to-transparent"></div>
+          {[...slides, slides[0]].map((slide, index) => (
+            <div key={index} className="min-w-full h-full relative">
+              <img
+                src={slide.image}
+                alt="Crosscane Overseas Banner"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/50 to-transparent"></div>
+            </div>
+          ))}
         </motion.div>
-      </AnimatePresence>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
         <div className="max-w-2xl text-white">
-
           {/* Tag */}
-          {/* <motion.p
-            key={slides[current].tag}
+          <motion.p
+            key={slides[current % slides.length].tag}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-gold-500 uppercase tracking-[2px] font-semibold mb-4"
           >
-            {slides[current].tag}
-          </motion.p> */}
+            {slides[current % slides.length].tag}
+          </motion.p>
 
           {/* Heading */}
           <motion.h1
-            key={slides[current].title1}
+            key={slides[current % slides.length].title1}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-5xl font-bold leading-tight mb-6"
           >
-            {slides[current].title1}
-            <br />
-
-            {slides[current].title2.replace(
-              slides[current].highlight,
-              ""
+            {renderHighlightedText(
+              slides[current % slides.length].title1,
+              slides[current % slides.length].highlight
             )}
-
-            <span className="text-gold-500 ml-2">
-              {slides[current].highlight}
-            </span>
+            <br />
+            {renderHighlightedText(
+              slides[current % slides.length].title2,
+              slides[current % slides.length].highlight
+            )}
           </motion.h1>
 
           {/* Description */}
           <motion.p
-            key={slides[current].desc}
+            key={slides[current % slides.length].desc}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-lg md:text-xl  leading-relaxed mb-8 max-w-xl"
+            className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
           >
-            {slides[current].desc}
+            {slides[current % slides.length].desc}
           </motion.p>
 
           {/* Buttons */}
@@ -124,19 +160,19 @@ const Banner = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-wrap gap-4"
           >
-            <a
-              href="/products"
+            <Link
+              to="/products"
               className="bg-gold-500 hover:bg-gold-500/80 text-navy-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-xl shadow-gold-500/20"
             >
               Explore Products
-            </a>
+            </Link>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="border border-white/20 text-white hover:bg-white hover:text-navy-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
             >
               Contact Us
-            </a>
+            </Link>
           </motion.div>
 
           {/* Features */}
@@ -178,7 +214,7 @@ const Banner = () => {
             key={index}
             onClick={() => setCurrent(index)}
             className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              current === index
+              (current % slides.length) === index
                 ? "bg-gold-500 scale-125"
                 : "bg-white/50"
             }`}

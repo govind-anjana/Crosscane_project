@@ -120,9 +120,9 @@ const ProductDetail = () => {
               <Link to="/contact" className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
                 <Mail size={18} /> Request A Quote
               </Link>
-              <Link to="/contact" className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all">
+              <a href={`mailto:info@crosscane.com?subject=Datasheet Request: ${product.title}`} className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all cursor-pointer">
                 <FileText size={18} /> Download Datasheet
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -177,10 +177,10 @@ const ProductDetail = () => {
                 </div>
               ))}
             </div>
-            <div className="bg-navy-900 py-4 px-8 rounded-2xl flex items-center justify-center gap-4 group hover:bg-gold-500 transition-colors">
+            <Link to="/contact" className="bg-navy-900 py-4 px-8 rounded-2xl flex items-center justify-center gap-4 group hover:bg-gold-500 transition-colors cursor-pointer">
               <ShieldCheck size={18} className="text-gold-500 group-hover:text-navy-900" />
               <p className="text-xs font-bold text-white group-hover:text-navy-900 uppercase tracking-widest">Private Label & Custom Branding</p>
-            </div>
+            </Link>
           </div>
         </div>
 

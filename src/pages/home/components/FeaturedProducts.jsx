@@ -40,7 +40,7 @@ const FeaturedProducts = () => {
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden bg-navy-900/5">
-                <Link to={`/services/${product.slug}`}>
+                <Link to={`/products/${product.slug}`}>
                   <img
                     src={product.image}
                     alt={product.name}
@@ -54,7 +54,7 @@ const FeaturedProducts = () => {
 
               {/* Body */}
               <div className="p-5">
-                <Link to={`/services/${product.slug}`}>
+                <Link to={`/products/${product.slug}`}>
                   <h3 className="text-base font-semibold text-navy-900 mb-1 hover:text-gold-500 transition-colors">
                     {product.name}
                   </h3>
@@ -64,7 +64,7 @@ const FeaturedProducts = () => {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-navy-900/40">{product.price}</span>
-                  <Link to={`/services/${product.slug}`} className="w-8 h-8 rounded-lg bg-navy-900 text-white flex items-center justify-center hover:bg-gold-500 transition-colors">
+                  <Link to={`/products/${product.slug}`} className="w-8 h-8 rounded-lg bg-navy-900 text-white flex items-center justify-center hover:bg-gold-500 transition-colors">
                     <ArrowRight size={14} />
                   </Link>
                 </div>
