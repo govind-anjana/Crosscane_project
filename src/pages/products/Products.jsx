@@ -66,8 +66,7 @@ const Products = () => {
               <div className="absolute inset-0 bg-gold-500/20 blur-xl group-focus-within:bg-gold-500/30 transition-all rounded-3xl" />
               <div className="relative glass-morphism-dark border-white/10 rounded-[2rem] p-2 flex items-center shadow-2xl">
                 <Search className="ml-6 text-gold-500" size={24} />
-                <input 
-                  type="text" 
+                <input type="text" name="search"
                   placeholder="Search our premium goods..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -100,7 +99,7 @@ const Products = () => {
           </div>
 
           {/* Product Grid - Refined Luxury Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
             <AnimatePresence mode='popLayout'>
               {filteredProducts.map((product, index) => (
                 <motion.div

@@ -45,8 +45,8 @@ const ProductGrid = () => {
                 </div>
 
                 {/* Content Area */}
-                <div className="pt-8 pb-6 px-4 text-center">
-                  <h3 className="text-lg font-bold text-navy-900 mb-3 group-hover:text-gold-500 transition-colors">
+                <div className="pt-5 pb-5 px-4 text-center">
+                  <h3 className="text-lg  font-bold text-navy-900 mb-3 group-hover:text-gold-500 transition-colors">
                     {product.name}
                   </h3>
                   <p className="text-navy-900/60 text-base leading-relaxed">

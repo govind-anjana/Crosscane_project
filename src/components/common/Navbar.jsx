@@ -3,7 +3,7 @@ import { Menu, X, Calendar, ChevronDown, Mail, Phone, Globe, Shield } from 'luci
 import { motion, AnimatePresence } from 'framer-motion';
 // import { CartoonButton } from '../ui/cartoon-button';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo5.png';
+import logo from '../../assets/logo6.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

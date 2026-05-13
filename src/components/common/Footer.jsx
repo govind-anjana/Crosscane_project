@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Globe, Share2, MessageCircle, ExternalLink, ArrowUp } from 'lucide-react'
-import logo from '../../assets/logo5.png'
+import logo from '../../assets/logo6.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -140,3 +140,4 @@ const Footer = () => {
 }
 
 export default Footer
+// 863bcc0d-ed85-4622-b925-272c335fb057
