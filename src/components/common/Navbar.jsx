@@ -3,7 +3,7 @@ import { Menu, X, Calendar, ChevronDown, Mail, Phone, Globe, Shield } from 'luci
 import { motion, AnimatePresence } from 'framer-motion';
 // import { CartoonButton } from '../ui/cartoon-button';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo.jpeg';
+import logo from '../../assets/logo5.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +13,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { 
-      name: 'Products', 
-      href: '/products',
+    {
+      name: 'Products',
+      // href: '/products',
       hasDropdown: true,
       submenu: [
         { name: "Banana Powder", href: "/products/banana-powder" },
@@ -41,11 +41,11 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 text-emerald-50/80">
               <Phone size={14} className="text-gold-500" />
-              <span>+1 (555) 123-4567</span>
+              <span>+91 94066 66677</span>
             </div>
             <div className="flex items-center gap-2 text-emerald-50/80">
               <Mail size={14} className="text-gold-500" />
-              <span>info@crosscane.com</span>
+              <span>crosscaneoverseas@gmail.com</span>
             </div>
           </div>
           <div className="flex items-center gap-6">
@@ -68,10 +68,10 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="group">
-                <img 
-                  src={logo} 
-                  alt="Logo"  
-                  className="h-12 md:h-16 w-auto object-contain transition-all group-hover:scale-105" 
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="h-14 md:h-20 w-auto object-contain transition-all group-hover:scale-105"
                 />
               </Link>
             </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-10">
               {navLinks.map((link) => (
-                <div 
+                <div
                   key={link.name}
                   className="relative"
                   onMouseEnter={() => link.hasDropdown && setIsServicesOpen(true)}
@@ -139,13 +139,13 @@ const Navbar = () => {
             {/* CTA Button */}
             <div className="hidden md:block">
               <Link to="/contact" className="btn-premium px-8 py-3 rounded-xl text-sm">
-                Get Quote
+                Catalog
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Open Menu"
                 className="p-2 text-navy-900 hover:text-gold-500 transition-colors"
@@ -182,7 +182,7 @@ const Navbar = () => {
                               <ChevronDown size={20} />
                             </motion.div>
                           </button>
-                          
+
                           <AnimatePresence>
                             {isServicesOpen && (
                               <motion.div
@@ -218,8 +218,8 @@ const Navbar = () => {
                     </div>
                   ))}
                   <div className="pt-4">
-                    <Link 
-                      to="/contact" 
+                    <Link
+                      to="/contact"
                       className="btn-premium w-full block text-center py-4 rounded-2xl shadow-none"
                       onClick={() => setIsMenuOpen(false)}
                     >

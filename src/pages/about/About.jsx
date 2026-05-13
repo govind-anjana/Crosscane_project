@@ -3,7 +3,7 @@ import Navbar from '../../components/common/Navbar'
 import Footer from '../../components/common/Footer'
 import { motion } from 'framer-motion'
 import { Users, Target, Award, ShieldCheck } from 'lucide-react'
-
+import aboutus from '../../assets/aboutus.png';
 const About = () => {
   return (
     <div className="min-h-screen bg-bg-primary">
@@ -26,7 +26,7 @@ const About = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-20">
+      <section className="py-15">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -69,15 +69,16 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative mt-2 md:mt-10"
             >
-              <div className="aspect-square bg-navy-900 rounded-3xl overflow-hidden shadow-2xl">
-                {/* Placeholder for an about image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-royal-700/50 to-transparent flex items-center justify-center">
-                   <Award size={100} className="text-gold-500/20" />
-                </div>
+                            <div className="aspect-[4/3] bg-navy-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <img 
+                  src={aboutus} 
+                  alt="About Crosscane Overseas" 
+                  className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
+                />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-gold-500 p-8 rounded-2xl shadow-xl hidden md:block">
+              <div className="absolute -bottom-10 -right-6 bg-gold-500 p-6 rounded-2xl shadow-xl hidden md:block">
                 <p className="text-navy-900 font-bold text-3xl">15+</p>
                 <p className="text-navy-900 text-sm font-medium">Years of Excellence</p>
               </div>
@@ -86,8 +87,40 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-white">
+      
+     
+      {/* Indian Craftsmanship Section */}
+      <section className="py-10 bg-bg-primary">
+        <div className="container mx-auto px-6">
+                    <div className="bg-navy-900 rounded-[2.5rem] overflow-hidden relative">
+            <div className="absolute top-0 right-0 p-20 opacity-10">
+              <Award size={200} className="text-gold-500" />
+            </div>
+            <div className="p-10 md:p-12 relative z-10">
+              <div className="max-w-3xl">
+                <span className="text-gold-500 font-semibold tracking-widest text-xs uppercase mb-4 block">The Indian Legacy</span>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
+                 <span className='text-white'> Representing the Richness & </span><br/><span className="text-gold-gradient">Craftsmanship of India</span>
+                </h2>
+                <p className="text-gray-400 text-justify text-base leading-relaxed mb-10">
+                  India is home to an unparalleled legacy of quality goods, from agricultural bounty to intricate handicrafts. At Crosscane Overseas, we take pride in being the bridge that connects this heritage to the global market, ensuring that every product delivered carries the mark of excellence.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="border-l-2 border-gold-500 pl-6">
+                    <span className="text-white text-xl font-bold mb-2">Consistent Quality</span>
+                    <p className="text-gray-500 text-sm">Adhering to strict international standards for every export.</p>
+                  </div>
+                  <div className="border-l-2 border-gold-500 pl-6">
+                    <span className="text-white text-xl font-bold mb-2">Timely Delivery</span>
+                    <p className="text-gray-500 text-sm">Efficient logistics ensuring your goods arrive on schedule.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-7 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
@@ -100,7 +133,7 @@ const About = () => {
               { icon: <Users className="text-gold-500" />, title: "Partnership", desc: "We grow when our clients grow. Your success is our ultimate objective." }
             ].map((value, i) => (
               <div key={i} className="p-8 rounded-xl border border-gray-100 hover:shadow-lg transition-all text-center">
-                <div className="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center mx-auto mb-2">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-navy-900">{value.title}</h3>
@@ -110,38 +143,6 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* Indian Craftsmanship Section */}
-      <section className="py-20 bg-bg-primary">
-        <div className="container mx-auto px-6">
-          <div className="bg-navy-900 rounded-3xl overflow-hidden relative">
-            <div className="absolute top-0 right-0 p-20 opacity-10">
-              <Award size={200} className="text-gold-500" />
-            </div>
-            <div className="p-12 md:p-15 relative z-10">
-              <div className="max-w-3xl">
-                <span className="text-gold-500 font-semibold tracking-widest text-xs uppercase mb-4 block">The Indian Legacy</span>
-                <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 leading-tight">
-                  Representing the Richness & <span className="text-gold-gradient">Craftsmanship of India</span>
-                </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                  India is home to an unparalleled legacy of quality goods, from agricultural bounty to intricate handicrafts. At Crosscane Overseas, we take pride in being the bridge that connects this heritage to the global market, ensuring that every product delivered carries the mark of excellence.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="border-l-2 border-gold-500 pl-6">
-                    <h4 className="text-white font-bold mb-2">consistent Quality</h4>
-                    <p className="text-gray-500 text-sm">Adhering to strict international standards for every export.</p>
-                  </div>
-                  <div className="border-l-2 border-gold-500 pl-6">
-                    <h4 className="text-white font-bold mb-2">Timely Delivery</h4>
-                    <p className="text-gray-500 text-sm">Efficient logistics ensuring your goods arrive on schedule.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
 
     </div>

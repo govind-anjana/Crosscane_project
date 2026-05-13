@@ -8,16 +8,16 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-bg-primary">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-premium py-20 text-white">
         <div className="container mx-auto px-6 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold  mb-6"
           >
-           <span className='text-white'> Contact </span><span className="text-gold-gradient">Us</span>
+            <span className='text-white'> Contact </span><span className="text-gold-gradient">Us</span>
           </motion.h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             Have questions about global trade? Our team is here to help you navigate the international market.
@@ -47,7 +47,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Email Us</p>
-                    <p className="text-lg font-bold text-navy-900">info@crosscane.com</p>
+                    <p className="text-lg font-bold text-navy-900">contact@crosscaneoverseas.com</p>
                   </div>
                 </div>
 
@@ -57,7 +57,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Call Us</p>
-                    <p className="text-lg font-bold text-navy-900">+1 (555) 123-4567</p>
+                    <p className="text-lg font-bold text-navy-900">+91 94066 66677</p>
                   </div>
                 </div>
 
@@ -67,17 +67,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Visit Us</p>
-                    <p className="text-lg font-bold text-navy-900">123 Trade Center, Global Plaza, NY 10001</p>
+                    <p className="text-lg font-bold text-navy-900">149 Vridavan Garden Colony, Pipliyahana Square, Indore(M.P.), India</p>
                   </div>
                 </div>
               </div>
 
               {/* Social or extra info */}
-              {/* <div className="mt-12 p-8 bg-navy-900 rounded-3xl text-white">
-                <h4 className="font-bold mb-2"><span className='text-white'>Business Hours</span></h4>
-                <p className="text-gray-400 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p className="text-gray-400 text-sm">Saturday - Sunday: Closed</p>
-              </div> */}
+
             </motion.div>
 
             {/* Contact Form */}
@@ -93,16 +89,16 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
                       placeholder="john@example.com"
                     />
@@ -110,22 +106,22 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
                     placeholder="Inquiry about services"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea 
+                  <textarea
                     rows="4"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
                     placeholder="Your message here..."
                   ></textarea>
                 </div>
                 <button type="button" className="btn-premium w-full py-4 flex items-center justify-center gap-2">
-                  <Send size={17}  className='inline  mx-3'/>
+                  <Send size={17} className='inline  mx-3' />
                   Send Message
                 </button>
               </form>

@@ -22,9 +22,9 @@ const CTA = () => {
               <Globe className="text-gold-500" size={40} />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 italic">
+              <span className="text-3xl md:text-4xl font-bold text-white mb-2 italic">
                 Let's Build Something <span className="text-gold-500">Great Together</span>
-              </h2>
+              </span>
               <p className="text-white/40 font-medium">
                 Get in touch with us for quality products and reliable export solutions.
               </p>
