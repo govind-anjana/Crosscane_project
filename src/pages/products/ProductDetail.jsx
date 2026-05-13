@@ -242,10 +242,10 @@ const ProductDetail = () => {
                    { icon: <Globe />, title: "Best for Global Markets" }
                  ].map((item, i) => (
                    <div key={i} className="flex items-center gap-3 group/li">
-                     <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover/li:bg-gold-500 group-hover/li:border-gold-500 transition-all">
+                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover/li:bg-gold-500 group-hover/li:border-gold-500 transition-all">
                        {React.cloneElement(item.icon, { size: 24 })}
                      </div>
-                     <span className="text-xl font-semibold  ">{item.title}</span>
+                     <span className="text-sm sm:text-lg md:text-xl font-semibold tracking-tight  leading-snug ">{item.title}</span>
                    </div>
                  ))}
                </div>
