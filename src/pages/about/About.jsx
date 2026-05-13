@@ -71,14 +71,14 @@ const About = () => {
               viewport={{ once: true }}
               className="relative mt-2 md:mt-10"
             >
-                            <div className="aspect-[4/3] bg-navy-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
+                            <div className="aspect-[4/3] bg-navy-900 rounded-3xl overflow-hidden shadow-2xl">
                 <img 
                   src={aboutus} 
                   alt="About Crosscane Overseas" 
                   className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-6 bg-gold-500 p-6 rounded-2xl shadow-xl hidden md:block">
+              <div className="absolute -bottom-12 -right-6 bg-gold-500 p-6 rounded-3xl shadow-xl hidden md:block">
                 <p className="text-navy-900 font-bold text-3xl">15+</p>
                 <p className="text-navy-900 text-sm font-medium">Years of Excellence</p>
               </div>
@@ -92,7 +92,7 @@ const About = () => {
       {/* Indian Craftsmanship Section */}
       <section className="py-10 bg-bg-primary">
         <div className="container mx-auto px-6">
-                    <div className="bg-navy-900 rounded-[2.5rem] overflow-hidden relative">
+                    <div className="bg-navy-900 rounded-3xl overflow-hidden relative">
             <div className="absolute top-0 right-0 p-20 opacity-10">
               <Award size={200} className="text-gold-500" />
             </div>

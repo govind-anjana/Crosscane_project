@@ -230,11 +230,11 @@ const ProductDetail = () => {
               ))}
             </div>
           </div>
-          <div className="relative rounded-3xl overflow-hidden w-[450px] h-[350px] shadow-2xl group ">
+          <div className="relative rounded-3xl overflow-hidden w-full max-w-[450px] h-[280px] sm:h-[320px] md:h-[350px] shadow-2xl group mx-auto">
             <img src={product.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Spec Bg" />
             <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[2px]"></div>
-            <div className="absolute inset-0 flex flex-col justify-center p-12 text-white">
-               <div className="space-y-8">
+            <div className="absolute inset-0 flex flex-col justify-center p-5 sm:p-8 md:p-12 text-white">
+               <div className="space-y-5">
                  {[
                    { icon: <Leaf />, title: "100% Natural & Fresh" },
                    { icon: <BadgeCheck />, title: "Hygienically Processed" },
@@ -245,7 +245,7 @@ const ProductDetail = () => {
                      <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover/li:bg-gold-500 group-hover/li:border-gold-500 transition-all">
                        {React.cloneElement(item.icon, { size: 24 })}
                      </div>
-                     <span className="text-xl font-bold tracking-tight uppercase">{item.title}</span>
+                     <span className="text-xl font-semibold  ">{item.title}</span>
                    </div>
                  ))}
                </div>
