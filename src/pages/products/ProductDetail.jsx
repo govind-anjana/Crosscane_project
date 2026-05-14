@@ -121,7 +121,7 @@ const ProductDetail = () => {
                 <Mail size={18} /> Contact Us
               </Link>
               <a href={`mailto:crosscaneoverseas@gmail.com?subject=Catalog Request: ${product.title}&body=Hello Crosscane Overseas,%0D%0A%0D%0APlease send me the catalog for ${product.title}.`} className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[13px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all cursor-pointer">
-                <FileText size={18} /> Download Catalog
+                <FileText size={18} />  Catalog
               </a>
             </div>
           </div>
