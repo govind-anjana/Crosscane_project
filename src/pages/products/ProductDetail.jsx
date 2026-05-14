@@ -120,7 +120,7 @@ const ProductDetail = () => {
               <Link to="/contact" className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[13px] uppercase flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
                 <Mail size={18} /> Contact Us
               </Link>
-              <a href="/catalog.pdf" download="Crosscane_Catalog.pdf" className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[13px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all cursor-pointer">
+              <a href={`mailto:crosscaneoverseas@gmail.com?subject=Catalog Request: ${product.title}&body=Hello Crosscane Overseas,%0D%0A%0D%0APlease send me the catalog for ${product.title}.`} className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[13px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all cursor-pointer">
                 <FileText size={18} /> Download Catalog
               </a>
             </div>
@@ -269,7 +269,7 @@ const ProductDetail = () => {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 z-10 w-full lg:w-auto">
-            <a href="/catalog.pdf" download="Crosscane_Catalog.pdf" className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
+            <a href={`mailto:crosscaneoverseas@gmail.com?subject=Catalog Request: ${product.title}&body=Hello Crosscane Overseas,%0D%0A%0D%0APlease send me the catalog for ${product.title}.`} className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
               Catalog <ChevronRight size={18} />
             </a>
             <Link to="/contact" className="flex-1 lg:flex-none bg-white/5 border-2 border-white/10 text-white px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white hover:text-navy-900 transition-all active:scale-95 flex items-center justify-center gap-3 backdrop-blur-sm">
