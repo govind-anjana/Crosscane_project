@@ -29,7 +29,7 @@ const Navbar = () => {
         { name: "Soyabeans", href: "/products/soyabean" },
       ]
     },
-    { name: 'Our Team', href: '/our-team' },
+    { name: 'Our Team', href: '/team' },
     { name: 'Contact', href: '/contact' },
   ];
 
