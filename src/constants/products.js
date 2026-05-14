@@ -257,45 +257,45 @@ export const PRODUCTS = [
     ],
     applications: ['Textile', 'Handicraft', 'Paper', 'Packaging', 'Rope', 'Mat', 'Eco-friendly Products']
   },
-  {
-    id: 6,
-    name: "Textile",
-    title: "Premium Textile Products Supplier & Exporter",
-    slug: "textiles",
-    category: "Textiles",
-    image: textile,
-    shortDesc: "High-quality textiles crafted for comfort and durability.",
-    price: "Inquire for Price",
-    tagline: "Precision Crafted Quality from India",
-    description: [
-      "Crosscane Overseas supplies high-quality textile products manufactured with precision and industry-standard quality control. We cater to wholesalers, distributors, and international buyers with reliable supply solutions and customized product options."
-    ],
-    features: [
-      "Premium Quality Materials",
-      "Durable & Industry Standard Products",
-      "Customized Designs & Specifications",
-      "Bulk Supply Capability",
-      "Export-Grade Packaging"
-    ],
-    exportCapability: "Crosscane Overseas leverages India's rich textile heritage to provide world-class fabrics and garments. We ensure rigorous quality checks and timely shipments to meet international fashion and home decor standards.",
-    pricingInfo: {
-      content: "Pricing may vary depending on:",
-      factors: [
-        "Material quality & type",
-        "Design complexity",
-        "Order volume",
-        "Packaging requirements"
-      ],
-      cta: "For customized textile solutions and bulk orders, please contact our export team."
-    },
-    specs: [
-      { label: "Origin", value: "India" },
-      { label: "Type", value: "Fabrics, Garments, Cotton" },
-      { label: "Quality", value: "ISO Certified Standards" },
-      { label: "Packaging", value: "Customized Export Grade" }
-    ],
-    applications: ['Domestic', 'International', 'Fashion', 'Home Decor', 'Industrial']
-  },
+  // {
+  //   id: 6,
+  //   name: "Textile",
+  //   title: "Premium Textile Products Supplier & Exporter",
+  //   slug: "textiles",
+  //   category: "Textiles",
+  //   image: textile,
+  //   shortDesc: "High-quality textiles crafted for comfort and durability.",
+  //   price: "Inquire for Price",
+  //   tagline: "Precision Crafted Quality from India",
+  //   description: [
+  //     "Crosscane Overseas supplies high-quality textile products manufactured with precision and industry-standard quality control. We cater to wholesalers, distributors, and international buyers with reliable supply solutions and customized product options."
+  //   ],
+  //   features: [
+  //     "Premium Quality Materials",
+  //     "Durable & Industry Standard Products",
+  //     "Customized Designs & Specifications",
+  //     "Bulk Supply Capability",
+  //     "Export-Grade Packaging"
+  //   ],
+  //   exportCapability: "Crosscane Overseas leverages India's rich textile heritage to provide world-class fabrics and garments. We ensure rigorous quality checks and timely shipments to meet international fashion and home decor standards.",
+  //   pricingInfo: {
+  //     content: "Pricing may vary depending on:",
+  //     factors: [
+  //       "Material quality & type",
+  //       "Design complexity",
+  //       "Order volume",
+  //       "Packaging requirements"
+  //     ],
+  //     cta: "For customized textile solutions and bulk orders, please contact our export team."
+  //   },
+  //   specs: [
+  //     { label: "Origin", value: "India" },
+  //     { label: "Type", value: "Fabrics, Garments, Cotton" },
+  //     { label: "Quality", value: "ISO Certified Standards" },
+  //     { label: "Packaging", value: "Customized Export Grade" }
+  //   ],
+  //   applications: ['Domestic', 'International', 'Fashion', 'Home Decor', 'Industrial']
+  // },
   {
     id: 7,
     name: "Spices",

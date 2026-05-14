@@ -24,7 +24,7 @@ const Navbar = () => {
         { name: "Fresh Onions", href: "/products/onions" },
         { name: "Premium Spices", href: "/products/spices" },
         { name: "Banana Fibers", href: "/products/banana-fibers" },
-        { name: "Textiles", href: "/products/textiles" },
+        // { name: "Textiles", href: "/products/textiles" },
         { name: "Jaggery Powder", href: "/products/jegry-powder" },
         { name: "Soyabeans", href: "/products/soyabean" },
       ]
