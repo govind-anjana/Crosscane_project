@@ -24,7 +24,7 @@ const WhyChoose = () => {
   return (
     <section className="py-24 bg-bg-primary">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto bg-white rounded-[32px] p-12 md:p-16 border border-navy-900/5 shadow-xl shadow-navy-900/5">
+        <div className="mx-auto bg-white rounded-2xl p-12 md:p-16 border border-navy-900/5 shadow-xl shadow-navy-900/5">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

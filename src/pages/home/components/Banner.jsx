@@ -107,7 +107,7 @@ useEffect(() => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+      <div className="relative z-10 mx-auto px-2 md:px-8 h-full flex items-center">
         <div className="max-w-2xl text-white">
           {/* Tag */}
           <motion.p

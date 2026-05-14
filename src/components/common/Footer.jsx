@@ -46,7 +46,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-navy-900 text-white pt-10 pb-5">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className=" mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between gap-1 md:gap-12 mb-10">
           
           {/* Brand Column */}

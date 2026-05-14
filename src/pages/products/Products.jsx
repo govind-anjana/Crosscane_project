@@ -82,12 +82,12 @@ const Products = () => {
       <section className="py-10 relative">
         <div className="container mx-auto px-6">
           {/* Categories - Horizontal Scroll on Mobile */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
+          <div className="flex overflow-x-auto hide-scrollbar justify-start md:justify-center gap-4 py-2 mb-10 md:flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-8 py-3 rounded-2xl text-[12px] font-bold tracking-[0.2em] uppercase transition-all duration-500 border-2 ${
+                className={` px-4 md:px-8 py-2 md:py-3 rounded-2xl text-[12px] font-bold tracking-[0.2em] uppercase transition-all duration-500 border-2 whitespace-nowrap flex-shrink-0 ${
                   activeCategory === cat 
                   ? "bg-navy-900 text-gold-500 border-navy-900 shadow-2xl shadow-navy-900/20 -translate-y-1" 
                   : "bg-white text-navy-900 border-gray-100 hover:border-gold-500 hover:text-gold-500"

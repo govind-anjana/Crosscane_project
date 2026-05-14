@@ -76,7 +76,7 @@ const CountDown = () => {
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-royal-700/20 rounded-full blur-[100px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className=" mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
          
           <motion.h2 

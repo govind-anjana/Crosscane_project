@@ -62,8 +62,8 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-white/95 backdrop-blur-md shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white  shadow-sm">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
@@ -71,7 +71,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-14 md:h-20 w-auto object-contain transition-all "
+                  className="h-14 md:h-20 w-auto object-contain transition-all mix-blend-multiply"
                 />
               </Link>
             </div>
