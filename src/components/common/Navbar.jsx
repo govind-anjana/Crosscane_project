@@ -77,7 +77,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden  md:flex items-center space-x-10 mr-15">
               {navLinks.map((link) => (
                 <div
                   key={link.name}
@@ -109,9 +109,9 @@ const Navbar = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.2, ease: "easeOut" }}
-                          className="absolute top-full -left-4 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+                          className="absolute top-full -left-4 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
                         >
-                          <div className="py-3 px-2 grid grid-cols-1 gap-1">
+                          <div className="py-3 grid grid-cols-1 gap-1">
                             {link.submenu.map((item, index) => (
                               <Link
                                 key={item.name}
@@ -137,11 +137,11 @@ const Navbar = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <Link to="/contact" className="btn-premium px-8 py-3 rounded-xl text-sm ">
                 Catalog
               </Link>
-            </div>
+            </div> */}
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
@@ -217,7 +217,7 @@ const Navbar = () => {
                       )}
                     </div>
                   ))}
-                  <div className="pt-4">
+                  {/* <div className="pt-4">
                     <Link
                       to="/contact"
                       className="btn-premium w-full block text-center py-4 rounded-2xl shadow-none"
@@ -225,7 +225,7 @@ const Navbar = () => {
                     >
                       Get Quote
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             )}

@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import banner1 from "../../../assets/banner1.png";
-import banner2 from "../../../assets/banner2.png";
-import banner3 from "../../../assets/banner3.png";
 
 const slides = [
   {
-    image: banner1,
+    image: 'https://res.cloudinary.com/dzquchr8o/image/upload/v1778743646/subcategories/o2z5ypzdekmema42b8rb.png',
     tag: "WE EXPORT • YOU GROW",
     title1: "Bringing Quality",
     title2: "From India To The World",
@@ -17,7 +14,7 @@ const slides = [
   },
 
   {
-    image: banner2,
+    image: 'https://res.cloudinary.com/dzquchr8o/image/upload/v1778743890/subcategories/bljrsb4ilxjmr1puphaz.png',
     tag: "GLOBAL EXPORT SOLUTIONS",
     title1: "Premium Agricultural",
     title2: "Products Worldwide",
@@ -26,7 +23,7 @@ const slides = [
   },
 
   {
-    image: banner3,
+    image: 'https://res.cloudinary.com/dzquchr8o/image/upload/v1778743999/subcategories/xr8bffvescj5llhtdxzk.png',
     tag: "TRUST • QUALITY • EXPORT",
     title1: "Reliable Export",
     title2: "Partner For Your Business",

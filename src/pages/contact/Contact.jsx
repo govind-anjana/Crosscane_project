@@ -73,7 +73,7 @@ const Contact = () => {
 
             <div className="space-y-8">
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white rounded-2xl shadow-md flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 p-2 bg-white rounded-2xl shadow-md flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
                   <Mail size={24} />
                 </div>
                 <div>
@@ -83,8 +83,8 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white rounded-2xl shadow-md flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
-                  <Phone size={24} />
+                <div className="w-10 h-10 p-2 bg-white rounded-2xl shadow-md flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
+                  <Phone size={22} />
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 font-medium">Call Us</p>
@@ -93,7 +93,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white rounded-2xl shadow-md flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 p-2 bg-white rounded-2xl shadow-md flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
                   <MapPin size={24} />
                 </div>
                 <div>

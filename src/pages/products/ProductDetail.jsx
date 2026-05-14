@@ -85,12 +85,12 @@ const ProductDetail = () => {
             <span className="inline-block px-4 py-1 bg-gold-500/10 text-gold-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 self-start">
               Premium Export Quality
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-navy-900 mb-4 tracking-tighter uppercase">{product.title}</h2>
-            <p className="text-gold-500 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-widest">
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5  uppercase">{product.title}</h2>
+            <p className="text-navy-600 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-widest">
              • Fresh  • Natural  • Global Standard
             </p>
 
-            <p className="text-gray-500  mb-4 text-base font-medium text-justify">
+            <p className="text-navy-500  mb-4 text-base font-medium text-justify pr-0 md:pr-4">
               At Crosscane Overseas, we supply premium-quality {product.title} sourced from trusted agricultural hubs and processed under strict global quality standards.
             </p>
 
@@ -117,10 +117,10 @@ const ProductDetail = () => {
             </div> */}
 
             <div className="flex flex-wrap gap-4 pt-1 border-t border-gray-50">
-              <Link to="/contact" className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
+              <Link to="/contact" className="flex-1 bg-navy-900 text-white px-8 py-5 rounded-2xl font-bold text-[13px] uppercase flex items-center justify-center gap-3 hover:bg-gold-500 transition-all shadow-xl shadow-navy-900/10 cursor-pointer">
                 <Mail size={18} /> Contact Us
               </Link>
-              <a href={`mailto:crosscaneoverseas@gmail.com?subject=Catalog Request: ${product.title}`} className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all cursor-pointer">
+              <a href="/catalog.pdf" download="Crosscane_Catalog.pdf" className="flex-1 border-2 border-gray-200 text-navy-900 px-8 py-5 rounded-2xl font-bold text-[13px] uppercase flex items-center justify-center gap-3 hover:border-gold-500 hover:text-gold-500 transition-all cursor-pointer">
                 <FileText size={18} /> Download Catalog
               </a>
             </div>
@@ -133,9 +133,9 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 ">
           {/* Section: Description */}
           <div className="bg-white border border-gray-100 rounded-3xl p-7 md:p-14 shadow-sm relative overflow-hidden group">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 -translate-y-1/2 translate-x-1/2 rounded-full group-hover:scale-150 transition-transform duration-1000" />
+             <div className="absolute top-0 right-0 w-64 h-60 bg-gold-500/5 -translate-y-1/2 translate-x-1/2 rounded-full group-hover:scale-150 transition-transform duration-1000" />
              <div className="relative z-10 max-w-2xl">
-               <h2 className="text-2xl font-black text-navy-900 mb-5 uppercase tracking-widest">Product Description</h2>
+               <h2 className="text-xl font-black text-navy-900 mb-5 uppercase tracking-widest">Product Description</h2>
                <p className="text-gray-500 text-lg leading-relaxed mb-5 font-medium italic text-justify">
                  Our {product.title} are carefully handpicked, machine-graded, and hygienically packed to maintain elite freshness and quality during international transit. We ensure that every batch meets the highest standards of international trade.
                </p>
@@ -148,7 +148,7 @@ const ProductDetail = () => {
                    "Zero-defect quality assurance",
                    "Environmentally conscious sourcing"
                  ].map((item, i) => (
-                   <div key={i} className="flex items-center gap-4 text-xs text-navy-800 font-bold group/item">
+                   <div key={i} className="flex items-center gap-4 text-sm text-navy-800 font-bold group/item">
                      <div className="w-8 h-8 rounded-full bg-navy-900 text-gold-500 flex items-center justify-center shrink-0 group-hover/item:bg-gold-500 group-hover/item:text-navy-900 transition-all">
                        <Check size={14} strokeWidth={4} />
                      </div>
@@ -161,12 +161,12 @@ const ProductDetail = () => {
 
           {/* Section: Packaging */}
           <div className="bg-white border border-gray-100 rounded-3xl p-7 md:p-14 shadow-sm">
-            <h2 className="text-2xl font-black text-navy-900 mb-10 uppercase tracking-widest">Packaging Options</h2>
+            <h2 className="text-xl font-black text-navy-900 mb-10 uppercase tracking-widest">Packaging Options</h2>
             <div className="grid grid-cols-3 gap-6 mb-12">
               {[
-                { title: "Standard Box", weight: "13 KG", icon: <Package size={32} /> },
-                { title: "Commercial", weight: "5 KG", icon: <Zap size={32} /> },
-                { title: "Bulk Supply", weight: "Custom", icon: <Truck size={32} /> }
+                { title: "Standard Box", weight: "13 KG", icon: <Package size={34} /> },
+                { title: "Commercial", weight: "5 KG", icon: <Zap size={34} /> },
+                { title: "Bulk Supply", weight: "Custom", icon: <Truck size={34} /> }
               ].map((p, i) => (
                 <div key={i} className="text-center group">
                   <div className="aspect-square rounded-3xl bg-gray-50 mb-6 flex items-center justify-center text-gold-500 border border-transparent group-hover:border-gold-500 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm">
@@ -190,14 +190,14 @@ const ProductDetail = () => {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold-500/5 translate-y-1/2 -translate-x-1/2 rounded-full blur-3xl pointer-events-none" />
           
           <div className="text-center mb-16 relative z-10">
-            <span className="text-gold-500 font-black text-[13px] uppercase mb-4 inline-block">Global Export Standards</span>
-            <h2 className="text-2xl lg:text-4xl font-bold text-white uppercase tracking-tighter block">
+            <span className="text-gold-500 font-semibold text-[13px] uppercase mb-4 inline-block">Global Export Standards</span>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white uppercase tracking-tighter block">
             <span className='text-white'>Product Capabilities</span>
             </h2>
-            <div className="w-16 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            <div className="w-16 h-1 bg-gold-500 mx-auto mt-2 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-9 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 md:gap-12 relative z-10">
             {[
               { icon: <Award size={28} />, text: "Premium Export Quality" },
               { icon: <Leaf size={28} />, text: "Naturally Fresh & Pure" },
@@ -208,10 +208,10 @@ const ProductDetail = () => {
               { icon: <Package size={28} />, text: "Bulk Export Supply" },
             ].map((f, i) => (
               <div key={i} className="flex flex-col items-center text-center group/item cursor-default">
-                <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover/item:bg-gold-500 group-hover/item:border-gold-500 group-hover/item:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl text-gold-500 group-hover/item:text-navy-900">
+                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover/item:bg-gold-500 group-hover/item:border-gold-500 group-hover/item:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl text-gold-500 group-hover/item:text-navy-900">
                   {f.icon}
                 </div>
-                <p className="text-[13px] font-bold text-white/80   uppercase  group-hover/item:text-gold-500 transition-colors duration-300">{f.text}</p>
+                <p className="text-[13px] font-semibold text-white/80   uppercase  group-hover/item:text-gold-500 transition-colors duration-300">{f.text}</p>
               </div>
             ))}
           </div>
@@ -220,11 +220,11 @@ const ProductDetail = () => {
         {/* Section: Specifications */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  mb-20">
           <div className="bg-white border border-gray-100 rounded-3xl p-7 md:px-14">
-            <h2 className="text-2xl font-black text-navy-900 mb-5 uppercase tracking-widest">Product Specifications</h2>
+            <h2 className="text-xl  font-bold  text-navy-900 mb-5 uppercase tracking-widest">Product Specifications</h2>
             <div className="space-y-0 divide-y divide-gray-100">
               {product.specs.map((spec, i) => (
                 <div key={i} className="flex justify-between py-4 group">
-                  <span className="text-[11px] font-bold text-gray-500 uppercase group-hover:text-gold-500 transition-colors">{spec.label}</span>
+                  <span className="text-[12px] font-bold text-gray-500  group-hover:text-gold-500 transition-colors">{spec.label}</span>
                   <span className="text-sm font-bold text-navy-900">{spec.value}</span>
                 </div>
               ))}
@@ -242,10 +242,10 @@ const ProductDetail = () => {
                    { icon: <Globe />, title: "Best for Global Markets" }
                  ].map((item, i) => (
                    <div key={i} className="flex items-center gap-3 group/li">
-                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover/li:bg-gold-500 group-hover/li:border-gold-500 transition-all">
+                     <div className="w-10 h-10  rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover/li:bg-gold-500 group-hover/li:border-gold-500 transition-all">
                        {React.cloneElement(item.icon, { size: 24 })}
                      </div>
-                     <span className="text-sm sm:text-lg md:text-xl font-semibold tracking-tight  leading-snug ">{item.title}</span>
+                     <span className="text-sm md:text-lg  font-semibold tracking-tight  leading-snug ">{item.title}</span>
                    </div>
                  ))}
                </div>
@@ -263,15 +263,15 @@ const ProductDetail = () => {
               <img src={product.image} className="w-full h-full object-cover" alt="Banner" />
             </div>
             <div className="text-center md:text-left space-y-3">
-              <span className="text-gold-500 font-bold text-[13px] uppercase block">Corporate Access</span>
-              <h2 className="text-2xl lg:text-4xl font-bold text-white tracking-tighter uppercase leading-[0.95]"><span className='text-white'>Ready For <br/>Bulk Supply?</span></h2>
+              <span className="text-gold-500 font-semibold text-[16px]  block">Corporate Access</span>
+              <h2 className="text-2xl lg:text-3xl font-bold text-white tracking-tighter uppercase leading-[0.95]"><span className='text-white'>Ready For <br/>Bulk Supply?</span></h2>
               <p className="text-white/60 font-medium max-w-md">Connect directly with our global export directors for exclusive technical briefings and bulk volume pricing.</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 z-10 w-full lg:w-auto">
-            <Link to="/contact" className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
+            <a href="/catalog.pdf" download="Crosscane_Catalog.pdf" className="flex-1 lg:flex-none bg-gold-500 text-navy-900 px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-gold-500/20 active:scale-95 flex items-center justify-center gap-3">
               Catalog <ChevronRight size={18} />
-            </Link>
+            </a>
             <Link to="/contact" className="flex-1 lg:flex-none bg-white/5 border-2 border-white/10 text-white px-12 py-6 rounded-2xl font-bold text-[13px] uppercase tracking-widest hover:bg-white hover:text-navy-900 transition-all active:scale-95 flex items-center justify-center gap-3 backdrop-blur-sm">
               Contact Us
             </Link>
