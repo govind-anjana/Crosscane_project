@@ -29,6 +29,7 @@ export const PRODUCTS = [
       "Rich in Nutrients & Fiber",
       "Long Shelf Life",
       "Suitable for Food & Industrial Applications",
+       "Export Quality Standards",
     ],
     packagingOptions: [
       "25 KG Food Grade Bags",
@@ -83,7 +84,6 @@ export const PRODUCTS = [
       "Hygienically Processed & Packed",
       "Long Shelf Life for Export Markets",
       "Rich in Potassium, Fiber & Essential Nutrients",
-      "Suitable for Wholesale & Bulk Supply",
     ],
     qualityAssurance: {
       title: "Quality Assurance",
@@ -147,7 +147,7 @@ export const PRODUCTS = [
       "Hygienically Cleaned & Processed",
       "Low Moisture Content",
       "Long Shelf Life",
-      "Suitable for Wholesale & Bulk Supply",
+      
     ],
     qualityAssurance: {
       title: "Quality Assurance",
@@ -262,6 +262,7 @@ export const PRODUCTS = [
       "Lightweight & Sustainable Material",
       "Suitable for Textile & Industrial Use",
       "Export Quality Processing",
+       "Sustainably Sourced Material",
     ],
     packagingOptions: [
       "Bundled Fiber Packaging",
@@ -354,6 +355,7 @@ export const PRODUCTS = [
       "High Purity Standards",
       "Long Shelf Life",
       "Export Quality Products",
+       "Freshly Sourced Ingredients",
     ],
     qualityAssurance: {
       title: "Available Spices",
@@ -417,6 +419,7 @@ export const PRODUCTS = [
       "Fine Texture & Easy Solubility",
       "Hygienically Packed",
       "Export Quality Standards",
+        "Nutrient-Rich Sweetener",
     ],
     packagingOptions: [
       "500g / 1 KG Retail Packs",
@@ -468,6 +471,7 @@ export const PRODUCTS = [
       "Hygienically Cleaned & Processed",
       "Low Moisture Content",
       "Suitable for Bulk & Export Supply",
+       "Rich in Essential Nutrients",
     ],
     packagingOptions: [
       "25 KG / 50 KG PP Bags",
@@ -520,7 +524,6 @@ export const PRODUCTS = [
       " Hygienically Processed & Packed",
       " Low Moisture Content",
       " Long Shelf Life",
-      " Suitable for Wholesale & Bulk Supply",
     ],
     qualityAssurance: {
       title: "Quality Assurance",

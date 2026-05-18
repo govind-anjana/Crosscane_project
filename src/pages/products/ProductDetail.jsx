@@ -221,53 +221,60 @@ const ProductDetail = () => {
         </div>
 
         {/* Product Capabilities */}
-      <div className="mb-24 bg-navy-900 rounded-[40px] p-8 md:p-14 lg:p-16 relative overflow-hidden shadow-2xl border border-white/10">
+  <div className="mb-24 bg-navy-900 rounded-[30px] md:rounded-[40px] p-3 sm:p-8 md:p-14 lg:p-14 relative overflow-hidden shadow-2xl border border-white/10">
 
   {/* Background Blur */}
-  <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold-500/10 blur-[120px] rounded-full"></div>
+  <div className="absolute top-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-gold-500/10 blur-[120px] rounded-full"></div>
 
   {/* Heading */}
-  <div className="text-center mb-14 relative z-10">
+  <div className="text-center mb-10 md:mb-14 relative z-10">
 
-    <span className="text-gold-500 font-semibold text-[12px] md:text-[13px] uppercase tracking-[3px] mb-4 inline-block">
+    <span className="text-gold-500 font-semibold text-[11px] sm:text-[12px] md:text-[13px] uppercase tracking-[3px] mb-3 md:mb-4 inline-block">
       Global Export Standards
     </span>
 
-    <h2 className="text-3xl md:text-4xl font-black  uppercase tracking-tight ">
-      <span className="text-white">Product Capabilities </span>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight">
+      <span className="text-white">
+        Product Capabilities
+      </span>
     </h2>
 
-    <div className="w-20 h-[4px] bg-gold-500 mx-auto mt-4 rounded-full"></div>
+    <div className="w-16 md:w-20 h-[4px] bg-gold-500 mx-auto mt-4 rounded-full"></div>
   </div>
 
-  {/* Features */}
-  <div className="flex justify-between align-items gap-y-10 gap-x-5 relative z-10">
+  {/* Mobile Horizontal Scroll */}
+  <div className="overflow-x-auto scrollbar-hide relative py-2 z-10">
 
-    {product.features?.map((feature, i) => (
-      <div
-        key={i}
-        className="flex flex-col justify-items items-center text-center group"
-      >
+    {/* Features Wrapper */}
+    <div className="flex md:grid md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8 lg:gap-8 min-w-max md:min-w-0">
 
-        {/* Icon Box */}
-        <div className="w-20 h-20 rounded-[28px] bg-white/5 border border-white/10 flex items-center justify-center mb-5 text-gold-500 backdrop-blur-md transition-all duration-500 group-hover:bg-gold-500 group-hover:text-navy-900 group-hover:scale-110">
+      {product.features?.map((feature, i) => (
+        <div
+          key={i}
+          className="flex flex-col items-center text-center group min-w-[140px] md:min-w-0"
+        >
 
-          {i === 0 && <Award size={34} />}
-          {i === 1 && <Leaf size={34} />}
-          {i === 2 && <Zap size={34} />}
-          {i === 3 && <BadgeCheck size={34} />}
-          {i === 4 && <Star size={34} />}
-          {i === 5 && <Clock size={34} />}
-          {i === 6 && <Package size={34} />}
+          {/* Icon Box */}
+          <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-[22px] md:rounded-[28px] bg-white/5 border border-white/10 flex items-center justify-center mb-4 md:mb-5 text-gold-500 backdrop-blur-md transition-all duration-500 group-hover:bg-gold-500 group-hover:text-navy-900 group-hover:scale-110 shrink-0">
+
+            {i === 0 && <Award size={30} />}
+            {i === 1 && <Leaf size={30} />}
+            {i === 2 && <Zap size={30} />}
+            {i === 3 && <BadgeCheck size={30} />}
+            {i === 4 && <Star size={30} />}
+            {i === 5 && <Clock size={30} />}
+            {i === 6 && <Package size={30} />}
+
+          </div>
+
+          {/* Text */}
+          <p className="text-[11px] sm:text-[12px] md:text-[13px] leading-5 md:leading-6 font-semibold text-white/90 uppercase tracking-wide px-1 group-hover:text-gold-500 transition-colors duration-300">
+            {feature}
+          </p>
 
         </div>
-
-        {/* Text */}
-        <p className="text-[12px] md:text-[13px] leading-6 font-semibold text-white/90 uppercase tracking-wide max-w-[160px] group-hover:text-gold-500 transition-colors duration-300">
-          {feature}
-        </p>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 </div>
 
