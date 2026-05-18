@@ -27,9 +27,10 @@ const Navbar = () => {
         // { name: "Textiles", href: "/products/textiles" },
         { name: "Jaggery Powder", href: "/products/jegry-powder" },
         { name: "Soyabeans", href: "/products/soyabean" },
+        { name: "Rice", href: "/products/rice" },
       ]
     },
-    { name: 'Our Team', href: '/team' },
+    // { name: 'Our Team', href: '/team' },
     { name: 'Contact', href: '/contact' },
   ];
 

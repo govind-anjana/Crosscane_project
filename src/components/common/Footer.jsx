@@ -86,9 +86,9 @@ const Footer = () => {
               <li><Link to="/products" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> Our Products
               </Link></li>
-              <li><Link to="/team" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
+              {/* <li><Link to="/team" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> Our Team
-              </Link></li>
+              </Link></li> */}
               <li><Link to="/contact" className="hover:text-gold-500 transition-all flex items-center gap-2 group font-semibold">
                 <span className="w-0 h-[1px] bg-gold-500 group-hover:w-3 transition-all"></span> Contact
               </Link></li>
